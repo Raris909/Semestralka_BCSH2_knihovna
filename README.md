@@ -1,0 +1,1 @@
+# Semestralka_BCSH2_knihovna
