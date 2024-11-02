@@ -1,0 +1,15 @@
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\bin\Debug\Knihovna_BCSH2.exe.config
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\bin\Debug\Knihovna_BCSH2.exe
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\bin\Debug\Knihovna_BCSH2.pdb
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\Knihovna_BCSH2.csproj.AssemblyReference.cache
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\MainWindow.g.cs
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\App.g.cs
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\Knihovna_BCSH2_MarkupCompile.cache
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\Knihovna_BCSH2_MarkupCompile.lref
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\MainWindow.baml
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\Knihovna_BCSH2.g.resources
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\Knihovna_BCSH2.Properties.Resources.resources
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\Knihovna_BCSH2.csproj.GenerateResource.cache
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\Knihovna_BCSH2.csproj.CoreCompileInputs.cache
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\Knihovna_BCSH2.exe
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\Knihovna_BCSH2.pdb
