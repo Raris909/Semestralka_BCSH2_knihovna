@@ -30,5 +30,33 @@ namespace Knihovna_BCSH2
         {
             Application.Current.Shutdown();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Knihy newWindow = new Knihy();
+            newWindow.Show();
+            Close();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Autori newWindow = new Autori();
+            newWindow.Show();
+            Close();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            Zapujcky newWindow = new Zapujcky();
+            newWindow.Show();
+            Close();
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            Zakaznici newWindow = new Zakaznici();
+            newWindow.Show();
+            Close();
+        }
     }
 }

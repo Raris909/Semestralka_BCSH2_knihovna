@@ -13,3 +13,11 @@ C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_B
 C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\Knihovna_BCSH2.csproj.CoreCompileInputs.cache
 C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\Knihovna_BCSH2.exe
 C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\Knihovna_BCSH2.pdb
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\Knihy.g.cs
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\Knihy.baml
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\Autori.g.cs
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\Zakaznici.g.cs
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\Zapujcky.g.cs
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\Autori.baml
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\Zakaznici.baml
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\Zapujcky.baml
