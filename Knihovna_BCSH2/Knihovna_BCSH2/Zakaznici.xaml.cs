@@ -48,7 +48,8 @@ namespace Knihovna_BCSH2
 
         private void AddCustomer_Click(object sender, RoutedEventArgs e)
         {
-
+            var addCustomerDialog = new PridatZakaznika();
+            addCustomerDialog.ShowDialog();
         }
         private void EditCustomer_Click(object sender, RoutedEventArgs e)
         {

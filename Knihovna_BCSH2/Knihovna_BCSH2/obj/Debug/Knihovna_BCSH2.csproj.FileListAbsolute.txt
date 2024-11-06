@@ -21,3 +21,11 @@ C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_B
 C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\Autori.baml
 C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\Zakaznici.baml
 C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\Zapujcky.baml
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\PridatKnihu.g.cs
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\PridatKnihu.baml
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\PridatAutora.g.cs
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\PridatZakaznika.g.cs
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\PridatZapujcku.g.cs
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\PridatAutora.baml
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\PridatZakaznika.baml
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna\Knihovna_BCSH2\Knihovna_BCSH2\obj\Debug\PridatZapujcku.baml

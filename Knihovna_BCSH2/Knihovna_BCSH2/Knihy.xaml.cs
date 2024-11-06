@@ -52,7 +52,8 @@ namespace Knihovna_BCSH2
 
         private void AddBook_Click(object sender, RoutedEventArgs e)
         {
-
+            var addBookDialog = new PridatKnihu();
+            addBookDialog.ShowDialog();
         }
         private void EditBook_Click(object sender, RoutedEventArgs e)
         {

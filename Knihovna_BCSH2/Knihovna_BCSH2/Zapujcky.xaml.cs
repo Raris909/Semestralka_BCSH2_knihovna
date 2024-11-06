@@ -46,7 +46,8 @@ namespace Knihovna_BCSH2
 
         private void AddLoan_Click(object sender, RoutedEventArgs e)
         {
-
+            var addLoanDialog = new PridatZapujcku();
+            addLoanDialog.ShowDialog();
         }
         private void EditLoan_Click(object sender, RoutedEventArgs e)
         {

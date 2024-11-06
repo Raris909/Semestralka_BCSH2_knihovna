@@ -45,7 +45,8 @@ namespace Knihovna_BCSH2
         }
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            var addAuthorDialog = new PridatAutora();
+            addAuthorDialog.ShowDialog();
         }
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
