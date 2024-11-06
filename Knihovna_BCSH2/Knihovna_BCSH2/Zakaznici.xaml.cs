@@ -19,9 +19,24 @@ namespace Knihovna_BCSH2
     /// </summary>
     public partial class Zakaznici : Window
     {
+        public string jmeno { get; set; }
+        public string prijmeni { get; set; }
+        public string adresa { get; set; }
+        public string telefon { get; set; }
+        public string email { get; set; }
         public Zakaznici()
         {
             InitializeComponent();
+        }
+
+        public Zakaznici(string jmeno, string prijmeni, string adresa, string telefon, string email)
+        {
+            InitializeComponent();
+            this.jmeno = jmeno;
+            this.prijmeni = prijmeni;
+            this.adresa = adresa;
+            this.telefon = telefon;
+            this.email = email;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -29,6 +44,19 @@ namespace Knihovna_BCSH2
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             Close();
+        }
+
+        private void AddCustomer_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void EditCustomer_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void DeleteCustomer_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Program.cs" />
     <Compile Include="Zakaznici.xaml.cs">
       <DependentUpon>Zakaznici.xaml</DependentUpon>
     </Compile>

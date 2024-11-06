@@ -19,9 +19,22 @@ namespace Knihovna_BCSH2
     /// </summary>
     public partial class Zapujcky : Window
     {
+        public string datumZapujcky { get; set; }
+        public string datumVraceni { get; set; }
+        public string kniha { get; set; }
+        public string zakaznik { get; set; }
         public Zapujcky()
         {
             InitializeComponent();
+        }
+
+        public Zapujcky(string datumZapujcky, string datumVraceni, string kniha, string zakaznik)
+        {
+            InitializeComponent();
+            this.datumZapujcky = datumZapujcky;
+            this.datumVraceni = datumVraceni;
+            this.kniha = kniha;
+            this.zakaznik = zakaznik;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -29,6 +42,19 @@ namespace Knihovna_BCSH2
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             Close();
+        }
+
+        private void AddLoan_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void EditLoan_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void DeleteLoan_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

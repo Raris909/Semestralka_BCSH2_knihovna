@@ -19,9 +19,22 @@ namespace Knihovna_BCSH2
     /// </summary>
     public partial class Autori : Window
     {
+        public string Jmeno { get; set; }
+        public string Prijmeni { get; set; }
+        public string DatumNarozeni { get; set; }
+        public string Zeme { get; set; }
         public Autori()
         {
             InitializeComponent();
+        }
+
+        public Autori(string jmeno, string prijmeni, string datumNarozeni, string zeme)
+        {
+            InitializeComponent();
+            Jmeno = jmeno;
+            Prijmeni = prijmeni;
+            DatumNarozeni = datumNarozeni;
+            Zeme = zeme;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -30,5 +43,18 @@ namespace Knihovna_BCSH2
             mainWindow.Show();
             Close();
         }
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
     }
 }

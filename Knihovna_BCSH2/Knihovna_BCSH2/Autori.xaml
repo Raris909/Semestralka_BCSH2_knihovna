@@ -7,6 +7,20 @@
         mc:Ignorable="d"
         Title="Autori" Height="450" Width="800">
     <Grid>
-        <Button Content="Zpět do hlavního menu" HorizontalAlignment="Left" Margin="636,374,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <DataGrid x:Name="AuthorsDataGrid" AutoGenerateColumns="False" Margin="10,10,10,50" 
+                  CanUserAddRows="False" IsReadOnly="True" SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Jméno" Binding="{Binding Jmeno}" Width="*"/>
+                <DataGridTextColumn Header="Příjmení" Binding="{Binding Prijmeni}" Width="*"/>
+                <DataGridTextColumn Header="Datum narození" Binding="{Binding DatumNarozeni}" Width="*"/>
+                <DataGridTextColumn Header="Země" Binding="{Binding Zeme}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
+            <Button Content="Přidat" Width="80" Margin="5" Click="AddButton_Click"/>
+            <Button Content="Upravit" Width="80" Margin="5" Click="EditButton_Click"/>
+            <Button Content="Odstranit" Width="80" Margin="5" Click="DeleteButton_Click"/>
+            <Button Content="Zpět do hlavního menu" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top" Click="Button_Click"/>
+        </StackPanel>
     </Grid>
 </Window>

@@ -7,6 +7,22 @@
         mc:Ignorable="d"
         Title="Zakaznici" Height="450" Width="800">
     <Grid>
-        <Button Content="Zpět do hlavního menu" HorizontalAlignment="Left" Margin="636,374,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <DataGrid x:Name="CustomersDataGrid" AutoGenerateColumns="False" Margin="10,10,10,50"
+                  CanUserAddRows="False" IsReadOnly="True" SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Jméno" Binding="{Binding jmeno}" Width="*"/>
+                <DataGridTextColumn Header="Příjmení" Binding="{Binding prijmeni}" Width="*"/>
+                <DataGridTextColumn Header="Adresa" Binding="{Binding adresa}" Width="*"/>
+                <DataGridTextColumn Header="Telefon" Binding="{Binding telefon}" Width="*"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding email}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
+            <Button Content="Přidat" Width="80" Margin="5" Click="AddCustomer_Click"/>
+            <Button Content="Upravit" Width="80" Margin="5" Click="EditCustomer_Click"/>
+            <Button Content="Odstranit" Width="80" Margin="5" Click="DeleteCustomer_Click"/>
+            <Button Content="Zpět do hlavního menu" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top" Click="Button_Click"/>
+        </StackPanel>
     </Grid>
 </Window>

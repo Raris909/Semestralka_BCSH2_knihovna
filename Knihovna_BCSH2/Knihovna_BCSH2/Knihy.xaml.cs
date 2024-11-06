@@ -19,9 +19,28 @@ namespace Knihovna_BCSH2
     /// </summary>
     public partial class Knihy : Window
     {
+        public string nazev { get; set; }
+        public string autor { get; set; }
+        public string zanr { get; set; }
+        public string vydavatel { get; set; }
+        public string rokVydani { get; set; }
+        public string pocetStran { get; set; }
+        public string jazyk { get; set; }
         public Knihy()
         {
             InitializeComponent();
+        }
+
+        public Knihy(string nazev, string autor, string zanr, string vydavatel, string rokVydani, string pocetStran, string jazyk)
+        {
+            InitializeComponent();
+            this.nazev = nazev;
+            this.autor = autor;
+            this.zanr = zanr;
+            this.vydavatel = vydavatel;
+            this.rokVydani = rokVydani;
+            this.pocetStran = pocetStran;
+            this.jazyk = jazyk;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -29,6 +48,19 @@ namespace Knihovna_BCSH2
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             Close();
+        }
+
+        private void AddBook_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void EditBook_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void DeleteBook_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
