@@ -19,10 +19,10 @@ namespace Knihovna_BCSH2
     /// </summary>
     public partial class Zapujcky : Window
     {
-        public string datumZapujcky { get; set; }
-        public string datumVraceni { get; set; }
-        public string kniha { get; set; }
-        public string zakaznik { get; set; }
+        public string DatumZapujcky { get; set; }
+        public string DatumVraceni { get; set; }
+        public string Kniha { get; set; }
+        public string Zakaznik { get; set; }
         public Zapujcky()
         {
             InitializeComponent();
@@ -31,10 +31,10 @@ namespace Knihovna_BCSH2
         public Zapujcky(string datumZapujcky, string datumVraceni, string kniha, string zakaznik)
         {
             InitializeComponent();
-            this.datumZapujcky = datumZapujcky;
-            this.datumVraceni = datumVraceni;
-            this.kniha = kniha;
-            this.zakaznik = zakaznik;
+            DatumZapujcky = datumZapujcky;
+            DatumVraceni = datumVraceni;
+            Kniha = kniha;
+            Zakaznik = zakaznik;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

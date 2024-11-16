@@ -19,11 +19,11 @@ namespace Knihovna_BCSH2
     /// </summary>
     public partial class Zakaznici : Window
     {
-        public string jmeno { get; set; }
-        public string prijmeni { get; set; }
-        public string adresa { get; set; }
-        public string telefon { get; set; }
-        public string email { get; set; }
+        public string Jmeno { get; set; }
+        public string Prijmeni { get; set; }
+        public string Adresa { get; set; }
+        public string Telefon { get; set; }
+        public string Email { get; set; }
         public Zakaznici()
         {
             InitializeComponent();
@@ -32,11 +32,11 @@ namespace Knihovna_BCSH2
         public Zakaznici(string jmeno, string prijmeni, string adresa, string telefon, string email)
         {
             InitializeComponent();
-            this.jmeno = jmeno;
-            this.prijmeni = prijmeni;
-            this.adresa = adresa;
-            this.telefon = telefon;
-            this.email = email;
+            Jmeno = jmeno;
+            Prijmeni = prijmeni;
+            Adresa = adresa;
+            Telefon = telefon;
+            Email = email;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

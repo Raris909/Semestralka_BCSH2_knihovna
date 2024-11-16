@@ -19,13 +19,13 @@ namespace Knihovna_BCSH2
     /// </summary>
     public partial class Knihy : Window
     {
-        public string nazev { get; set; }
-        public string autor { get; set; }
-        public string zanr { get; set; }
-        public string vydavatel { get; set; }
-        public string rokVydani { get; set; }
-        public string pocetStran { get; set; }
-        public string jazyk { get; set; }
+        public string Nazev { get; set; }
+        public string Autor { get; set; }
+        public string Zanr { get; set; }
+        public string Vydavatel { get; set; }
+        public string RokVydani { get; set; }
+        public string PocetStran { get; set; }
+        public string Jazyk { get; set; }
         public Knihy()
         {
             InitializeComponent();
@@ -34,13 +34,13 @@ namespace Knihovna_BCSH2
         public Knihy(string nazev, string autor, string zanr, string vydavatel, string rokVydani, string pocetStran, string jazyk)
         {
             InitializeComponent();
-            this.nazev = nazev;
-            this.autor = autor;
-            this.zanr = zanr;
-            this.vydavatel = vydavatel;
-            this.rokVydani = rokVydani;
-            this.pocetStran = pocetStran;
-            this.jazyk = jazyk;
+            Nazev = nazev;
+            Autor = autor;
+            Zanr = zanr;
+            Vydavatel = vydavatel;
+            RokVydani = rokVydani;
+            PocetStran = pocetStran;
+            Jazyk = jazyk;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
