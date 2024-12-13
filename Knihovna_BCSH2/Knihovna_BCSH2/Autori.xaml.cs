@@ -41,30 +41,21 @@ namespace Knihovna_BCSH2
         }
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            //var addAuthorDialog = new PridatAutora();
-            //addAuthorDialog.ShowDialog();
-            var newAuthor = new Autor
-            {
-                Jmeno = "Nové jméno",
-                Prijmeni = "Nové příjmení",
-                DatumNarozeni = DateTime.Now,
-                Zeme = "Nová země"
-            };
+            PridatAutora addAuthorWindow = new PridatAutora();
+            
+            // Po zavření okna pro přidání autora (OK nebo Cancel) obnovíme seznam autorů
+            addAuthorWindow.ShowDialog();
 
-            dbHelper.AddAuthor(newAuthor);
-            LoadAuthors(); // Obnoví DataGrid
+            // Po přidání nového autora aktualizujeme seznam
+            LoadAuthors();
         }
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
             if (AuthorsDataGrid.SelectedItem is Autor selectedAuthor)
             {
-                selectedAuthor.Jmeno = "Upravené jméno";
-                selectedAuthor.Prijmeni = "Upravené příjmení";
-                selectedAuthor.DatumNarozeni = DateTime.Now;
-                selectedAuthor.Zeme = "Upravená země";
-
-                dbHelper.UpdateAuthor(selectedAuthor);
-                LoadAuthors(); // Obnoví DataGrid
+                PridatAutora editAuthorWindow = new PridatAutora(selectedAuthor);
+                editAuthorWindow.ShowDialog(); // Zobrazí okno pro úpravu
+                LoadAuthors(); // Obnoví seznam autorů
             }
             else
             {
