@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
@@ -24,6 +25,32 @@ namespace Knihovna_BCSH2
         public MainWindow()
         {
             InitializeComponent();
+            InitializeDatabase();
+        }
+
+        private void InitializeDatabase()
+        {
+            string connectionString = "Data Source=MyDatabase.db;Version=3;";
+
+            // SQL dotaz pro vytvoření tabulky, pokud ještě neexistuje
+            string createTableQuery = @"
+                CREATE TABLE IF NOT EXISTS Autori (
+                Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                Jmeno TEXT NOT NULL,
+                Prijmeni TEXT NOT NULL,
+                DatumNarozeni DATE NOT NULL,
+                Zeme TEXT NOT NULL
+            );
+            ";
+
+            using (var connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                using (var command = new SQLiteCommand(createTableQuery, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

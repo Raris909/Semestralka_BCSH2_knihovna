@@ -19,22 +19,18 @@ namespace Knihovna_BCSH2
     /// </summary>
     public partial class Autori : Window
     {
-        public string Jmeno { get; set; }
-        public string Prijmeni { get; set; }
-        public string DatumNarozeni { get; set; }
-        public string Zeme { get; set; }
+        private DatabaseHelper dbHelper = new DatabaseHelper();
+        private List<Autor> authorsList = new List<Autor>();
         public Autori()
         {
             InitializeComponent();
+            LoadAuthors();
         }
 
-        public Autori(string jmeno, string prijmeni, string datumNarozeni, string zeme)
+        private void LoadAuthors()
         {
-            InitializeComponent();
-            Jmeno = jmeno;
-            Prijmeni = prijmeni;
-            DatumNarozeni = datumNarozeni;
-            Zeme = zeme;
+            authorsList = dbHelper.GetAllAuthors();
+            AuthorsDataGrid.ItemsSource = authorsList;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -45,16 +41,47 @@ namespace Knihovna_BCSH2
         }
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            var addAuthorDialog = new PridatAutora();
-            addAuthorDialog.ShowDialog();
+            //var addAuthorDialog = new PridatAutora();
+            //addAuthorDialog.ShowDialog();
+            var newAuthor = new Autor
+            {
+                Jmeno = "Nové jméno",
+                Prijmeni = "Nové příjmení",
+                DatumNarozeni = DateTime.Now,
+                Zeme = "Nová země"
+            };
+
+            dbHelper.AddAuthor(newAuthor);
+            LoadAuthors(); // Obnoví DataGrid
         }
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (AuthorsDataGrid.SelectedItem is Autor selectedAuthor)
+            {
+                selectedAuthor.Jmeno = "Upravené jméno";
+                selectedAuthor.Prijmeni = "Upravené příjmení";
+                selectedAuthor.DatumNarozeni = DateTime.Now;
+                selectedAuthor.Zeme = "Upravená země";
+
+                dbHelper.UpdateAuthor(selectedAuthor);
+                LoadAuthors(); // Obnoví DataGrid
+            }
+            else
+            {
+                MessageBox.Show("Vyberte autora k úpravě.");
+            }
         }
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (AuthorsDataGrid.SelectedItem is Autor selectedAuthor)
+            {
+                dbHelper.DeleteAuthor(selectedAuthor.Id);
+                LoadAuthors(); // Obnoví DataGrid
+            }
+            else
+            {
+                MessageBox.Show("Vyberte autora k odstranění.");
+            }
         }
 
     }
