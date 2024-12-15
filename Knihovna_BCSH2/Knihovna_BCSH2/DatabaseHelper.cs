@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Knihovna_BCSH2
 {
@@ -100,5 +102,101 @@ namespace Knihovna_BCSH2
                 }
             }
         }
+
+        public List<Kniha> GetBooks()
+        {
+            string query = "SELECT k.Id, k.Nazev, k.Zanr, k.Vydavatel, k.RokVydani, k.PocetStran, k.Jazyk, k.AutorId, " +
+                    "a.Jmeno, a.Prijmeni " +
+                    "FROM Knihy k " +
+                    "JOIN Autori a ON k.AutorId = a.Id;";
+            using (var connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                var command = new SQLiteCommand(query, connection);
+
+                var books = new List<Kniha>();
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        books.Add(new Kniha
+                        {
+                            Id = reader.GetInt32(0),
+                            Nazev = reader.GetString(1),
+                            Zanr = reader.GetString(2),
+                            Vydavatel = reader.GetString(3),
+                            RokVydani = reader.GetInt32(4),
+                            PocetStran = reader.GetInt32(5),
+                            Jazyk = reader.GetString(6),
+                            AutorId = reader.GetInt32(7),
+                            Autor = new Autor
+                            {
+                                Id = reader.GetInt32(7),
+                                Jmeno = reader.GetString(8),
+                                Prijmeni = reader.GetString(9)
+                            }
+                        });
+                    }
+                }
+                return books;
+            }
+        }
+
+
+        public void AddBook(Kniha kniha)
+        {
+            using (var connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                var command = new SQLiteCommand(
+                    "INSERT INTO Knihy (Nazev, Zanr, Vydavatel, RokVydani, PocetStran, Jazyk, AutorId) " +
+                    "VALUES (@Nazev, @Zanr, @Vydavatel, @RokVydani, @PocetStran, @Jazyk, @AutorId)", connection);
+
+                command.Parameters.AddWithValue("@Nazev", kniha.Nazev);
+                command.Parameters.AddWithValue("@Zanr", kniha.Zanr);
+                command.Parameters.AddWithValue("@Vydavatel", kniha.Vydavatel);
+                command.Parameters.AddWithValue("@RokVydani", kniha.RokVydani);
+                command.Parameters.AddWithValue("@PocetStran", kniha.PocetStran);
+                command.Parameters.AddWithValue("@Jazyk", kniha.Jazyk);
+                command.Parameters.AddWithValue("@AutorId", kniha.AutorId);
+
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void UpdateBook(Kniha kniha)
+        {
+            using (var connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                var command = new SQLiteCommand(
+                    "UPDATE Knihy SET Nazev = @Nazev, Zanr = @Zanr, Vydavatel = @Vydavatel, " +
+                    "RokVydani = @RokVydani, PocetStran = @PocetStran, Jazyk = @Jazyk, AutorId = @AutorId " +
+                    "WHERE Id = @Id", connection);
+
+                command.Parameters.AddWithValue("@Nazev", kniha.Nazev);
+                command.Parameters.AddWithValue("@Zanr", kniha.Zanr);
+                command.Parameters.AddWithValue("@Vydavatel", kniha.Vydavatel);
+                command.Parameters.AddWithValue("@RokVydani", kniha.RokVydani);
+                command.Parameters.AddWithValue("@PocetStran", kniha.PocetStran);
+                command.Parameters.AddWithValue("@Jazyk", kniha.Jazyk);
+                command.Parameters.AddWithValue("@AutorId", kniha.AutorId);
+                command.Parameters.AddWithValue("@Id", kniha.Id);
+
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void DeleteBook(Kniha book)
+        {
+            using (var connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                var command = new SQLiteCommand("DELETE FROM Knihy WHERE Id = @Id", connection);
+                command.Parameters.AddWithValue("@Id", book.Id);
+                command.ExecuteNonQuery();
+            }
+        }
+
     }
 }

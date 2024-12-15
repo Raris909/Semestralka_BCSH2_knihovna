@@ -41,6 +41,19 @@ namespace Knihovna_BCSH2
                 DatumNarozeni DATE NOT NULL,
                 Zeme TEXT NOT NULL
             );
+
+            CREATE TABLE IF NOT EXISTS Knihy (
+                Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                Nazev TEXT NOT NULL,
+                Zanr TEXT NOT NULL,
+                Vydavatel TEXT NOT NULL,
+                RokVydani INTEGER NOT NULL,
+                PocetStran INTEGER NOT NULL,
+                Jazyk TEXT NOT NULL,
+                AutorId INTEGER NOT NULL,
+                FOREIGN KEY (AutorId) REFERENCES Autori(Id)
+            );
+
             ";
 
             using (var connection = new SQLiteConnection(connectionString))

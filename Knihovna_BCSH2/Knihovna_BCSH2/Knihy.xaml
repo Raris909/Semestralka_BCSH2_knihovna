@@ -10,13 +10,13 @@
         <DataGrid x:Name="BooksDataGrid" AutoGenerateColumns="False" Margin="10,10,10,50"
                   CanUserAddRows="False" IsReadOnly="True" SelectionMode="Single">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Název" Binding="{Binding nazev}" Width="*"/>
-                <DataGridTextColumn Header="Autor" Binding="{Binding autor}" Width="*"/>
-                <DataGridTextColumn Header="Žánr" Binding="{Binding zanr}" Width="*"/>
-                <DataGridTextColumn Header="Vydavatel" Binding="{Binding vydavatel}" Width="*"/>
-                <DataGridTextColumn Header="Rok vydání" Binding="{Binding rokVydani}" Width="*"/>
-                <DataGridTextColumn Header="Počet stran" Binding="{Binding pocetStran}" Width="*"/>
-                <DataGridTextColumn Header="Jazyk" Binding="{Binding jazyk}" Width="*"/>
+                <DataGridTextColumn Header="Název" Binding="{Binding Nazev}" Width="*"/>
+                <DataGridTextColumn Header="Autor" Binding="{Binding AutorId}" Width="*"/>
+                <DataGridTextColumn Header="Žánr" Binding="{Binding Zanr}" Width="*"/>
+                <DataGridTextColumn Header="Vydavatel" Binding="{Binding Vydavatel}" Width="*"/>
+                <DataGridTextColumn Header="Rok vydání" Binding="{Binding RokVydani}" Width="*"/>
+                <DataGridTextColumn Header="Počet stran" Binding="{Binding PocetStran}" Width="*"/>
+                <DataGridTextColumn Header="Jazyk" Binding="{Binding Jazyk}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">

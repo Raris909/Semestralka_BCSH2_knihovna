@@ -13,6 +13,7 @@ namespace Knihovna_BCSH2
         public string Prijmeni { get; set; }
         public DateTime DatumNarozeni { get; set; }
         public string Zeme { get; set; }
+        public string FullName { get; set; }
     }
 
 }

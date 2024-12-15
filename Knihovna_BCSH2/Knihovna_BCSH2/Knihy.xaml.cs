@@ -19,28 +19,11 @@ namespace Knihovna_BCSH2
     /// </summary>
     public partial class Knihy : Window
     {
-        public string Nazev { get; set; }
-        public string Autor { get; set; }
-        public string Zanr { get; set; }
-        public string Vydavatel { get; set; }
-        public string RokVydani { get; set; }
-        public string PocetStran { get; set; }
-        public string Jazyk { get; set; }
+        private DatabaseHelper dbHelper = new DatabaseHelper();
         public Knihy()
         {
             InitializeComponent();
-        }
-
-        public Knihy(string nazev, string autor, string zanr, string vydavatel, string rokVydani, string pocetStran, string jazyk)
-        {
-            InitializeComponent();
-            Nazev = nazev;
-            Autor = autor;
-            Zanr = zanr;
-            Vydavatel = vydavatel;
-            RokVydani = rokVydani;
-            PocetStran = pocetStran;
-            Jazyk = jazyk;
+            LoadBooks();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -52,16 +35,63 @@ namespace Knihovna_BCSH2
 
         private void AddBook_Click(object sender, RoutedEventArgs e)
         {
-            var addBookDialog = new PridatKnihu();
-            addBookDialog.ShowDialog();
+            var addBookWindow = new PridatKnihu(); // Okno pro přidání nové knihy
+            if (addBookWindow.ShowDialog() == true)
+            {
+                LoadBooks(); // Obnovení seznamu knih po přidání
+            }
         }
         private void EditBook_Click(object sender, RoutedEventArgs e)
         {
-
+            if (BooksDataGrid.SelectedItem is Kniha selectedBook)
+            {
+                var editBookWindow = new PridatKnihu(selectedBook); // Okno pro úpravu existující knihy
+                if (editBookWindow.ShowDialog() == true)
+                {
+                    LoadBooks(); // Obnovení seznamu knih po úpravě
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vyberte knihu, kterou chcete upravit.");
+            }
         }
         private void DeleteBook_Click(object sender, RoutedEventArgs e)
         {
-
+            if (BooksDataGrid.SelectedItem is Kniha selectedBook)
+            {
+                if (MessageBox.Show("Opravdu chcete odstranit vybranou knihu?", "Potvrzení", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                {
+                    try
+                    {
+                        dbHelper.DeleteBook(selectedBook);
+                        MessageBox.Show("Kniha byla úspěšně odstraněna.");
+                        LoadBooks(); // Obnovení seznamu knih po odstranění
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Došlo k chybě při odstraňování knihy: {ex.Message}");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vyberte knihu, kterou chcete odstranit.");
+            }
         }
+
+        private void LoadBooks()
+        {
+            try
+            {
+                var books = dbHelper.GetBooks(); // Získání seznamu knih z databáze
+                BooksDataGrid.ItemsSource = books;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Došlo k chybě při načítání knih: {ex.Message}");
+            }
+        }
+
     }
 }

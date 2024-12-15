@@ -76,6 +76,7 @@
     </ApplicationDefinition>
     <Compile Include="Autor.cs" />
     <Compile Include="DatabaseHelper.cs" />
+    <Compile Include="Kniha.cs" />
     <Compile Include="PridatAutora.xaml.cs">
       <DependentUpon>PridatAutora.xaml</DependentUpon>
     </Compile>
@@ -163,6 +164,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
