@@ -10,11 +10,11 @@
         <DataGrid x:Name="CustomersDataGrid" AutoGenerateColumns="False" Margin="10,10,10,50"
                   CanUserAddRows="False" IsReadOnly="True" SelectionMode="Single">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Jméno" Binding="{Binding jmeno}" Width="*"/>
-                <DataGridTextColumn Header="Příjmení" Binding="{Binding prijmeni}" Width="*"/>
-                <DataGridTextColumn Header="Adresa" Binding="{Binding adresa}" Width="*"/>
-                <DataGridTextColumn Header="Telefon" Binding="{Binding telefon}" Width="*"/>
-                <DataGridTextColumn Header="Email" Binding="{Binding email}" Width="*"/>
+                <DataGridTextColumn Header="Jméno" Binding="{Binding Jmeno}" Width="*"/>
+                <DataGridTextColumn Header="Příjmení" Binding="{Binding Prijmeni}" Width="*"/>
+                <DataGridTextColumn Header="Adresa" Binding="{Binding Adresa}" Width="*"/>
+                <DataGridTextColumn Header="Telefon" Binding="{Binding Telefon}" Width="*"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
 

@@ -19,24 +19,17 @@ namespace Knihovna_BCSH2
     /// </summary>
     public partial class Zakaznici : Window
     {
-        public string Jmeno { get; set; }
-        public string Prijmeni { get; set; }
-        public string Adresa { get; set; }
-        public string Telefon { get; set; }
-        public string Email { get; set; }
         public Zakaznici()
         {
             InitializeComponent();
+            LoadZakaznici();
         }
 
-        public Zakaznici(string jmeno, string prijmeni, string adresa, string telefon, string email)
+        private void LoadZakaznici()
         {
-            InitializeComponent();
-            Jmeno = jmeno;
-            Prijmeni = prijmeni;
-            Adresa = adresa;
-            Telefon = telefon;
-            Email = email;
+            var dbHelper = new DatabaseHelper();
+            var zakaznici = dbHelper.GetZakaznici();
+            CustomersDataGrid.ItemsSource = zakaznici;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -48,16 +41,79 @@ namespace Knihovna_BCSH2
 
         private void AddCustomer_Click(object sender, RoutedEventArgs e)
         {
-            var addCustomerDialog = new PridatZakaznika();
-            addCustomerDialog.ShowDialog();
+            var pridatZakaznikaDialog = new PridatZakaznika();
+            if (pridatZakaznikaDialog.ShowDialog() == true)
+            {
+                var zakaznik = new Zakaznik
+                {
+                    Jmeno = pridatZakaznikaDialog.JmenoTextBox.Text,
+                    Prijmeni = pridatZakaznikaDialog.PrijmeniTextBox.Text,
+                    Adresa = pridatZakaznikaDialog.AdresaTextBox.Text,
+                    Telefon = pridatZakaznikaDialog.TelefonTextBox.Text,
+                    Email = pridatZakaznikaDialog.EmailTextBox.Text
+                };
+
+                var dbHelper = new DatabaseHelper();
+                dbHelper.AddZakaznik(zakaznik);
+
+                MessageBox.Show("Zákazník byl přidán.");
+                LoadZakaznici();
+            }
         }
         private void EditCustomer_Click(object sender, RoutedEventArgs e)
         {
+            if (CustomersDataGrid.SelectedItem is Zakaznik selectedZakaznik)
+            {
+                // Otevřeme dialogové okno pro úpravu zákazníka
+                var editDialog = new PridatZakaznika
+                {
+                    JmenoTextBox = { Text = selectedZakaznik.Jmeno },
+                    PrijmeniTextBox = { Text = selectedZakaznik.Prijmeni },
+                    AdresaTextBox = { Text = selectedZakaznik.Adresa },
+                    TelefonTextBox = { Text = selectedZakaznik.Telefon },
+                    EmailTextBox = { Text = selectedZakaznik.Email }
+                };
 
+                if (editDialog.ShowDialog() == true)
+                {
+                    // Aktualizujeme data podle vstupů z dialogu
+                    selectedZakaznik.Jmeno = editDialog.Jmeno;
+                    selectedZakaznik.Prijmeni = editDialog.Prijmeni;
+                    selectedZakaznik.Adresa = editDialog.Adresa;
+                    selectedZakaznik.Telefon = editDialog.Telefon;
+                    selectedZakaznik.Email = editDialog.Email;
+
+                    // Uložíme změny do databáze
+                    var dbHelper = new DatabaseHelper();
+                    dbHelper.UpdateZakaznik(selectedZakaznik);
+
+                    MessageBox.Show("Zákazník byl úspěšně upraven.", "Úspěch", MessageBoxButton.OK, MessageBoxImage.Information);
+                    LoadZakaznici(); // Obnovíme seznam zákazníků
+                }
+            }
+            else
+            {
+                MessageBox.Show("Prosím, vyberte zákazníka k úpravě.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
+
         private void DeleteCustomer_Click(object sender, RoutedEventArgs e)
         {
+            if (CustomersDataGrid.SelectedItem is Zakaznik selectedZakaznik)
+            {
+                var result = MessageBox.Show($"Opravdu chcete odstranit zákazníka {selectedZakaznik.Jmeno} {selectedZakaznik.Prijmeni}?",
+                    "Potvrdit smazání", MessageBoxButton.YesNo);
 
+                if (result == MessageBoxResult.Yes)
+                {
+                    var dbHelper = new DatabaseHelper();
+                    dbHelper.DeleteZakaznik(selectedZakaznik.Id);
+
+                    MessageBox.Show("Zákazník byl odstraněn.");
+                    LoadZakaznici();
+                }
+            }
         }
+
     }
 }

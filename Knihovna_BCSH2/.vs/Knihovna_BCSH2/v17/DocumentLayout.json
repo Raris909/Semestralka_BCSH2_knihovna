@@ -3,27 +3,47 @@
   "WorkspaceRootPath": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|c:\\users\\pospi\\source\\repos\\semestralka_bcsh2_knihovna_2\\knihovna_bcsh2\\knihovna_bcsh2\\knihy.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|solutionrelative:knihovna_bcsh2\\knihy.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|c:\\users\\pospi\\source\\repos\\semestralka_bcsh2_knihovna_2\\knihovna_bcsh2\\knihovna_bcsh2\\zakaznici.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|solutionrelative:knihovna_bcsh2\\zakaznici.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|c:\\users\\pospi\\source\\repos\\semestralka_bcsh2_knihovna_2\\knihovna_bcsh2\\knihovna_bcsh2\\zakaznici.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|solutionrelative:knihovna_bcsh2\\zakaznici.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|c:\\users\\pospi\\source\\repos\\semestralka_bcsh2_knihovna_2\\knihovna_bcsh2\\knihovna_bcsh2\\pridatzakaznika.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|solutionrelative:knihovna_bcsh2\\pridatzakaznika.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|c:\\users\\pospi\\source\\repos\\semestralka_bcsh2_knihovna_2\\knihovna_bcsh2\\knihovna_bcsh2\\zakaznik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|solutionrelative:knihovna_bcsh2\\zakaznik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\knihovna_bcsh2\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|solutionrelative:knihovna_bcsh2\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|c:\\users\\pospi\\source\\repos\\semestralka_bcsh2_knihovna_2\\knihovna_bcsh2\\knihovna_bcsh2\\knihy.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|solutionrelative:knihovna_bcsh2\\knihy.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\knihovna_bcsh2\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|solutionrelative:knihovna_bcsh2\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|c:\\users\\pospi\\source\\repos\\semestralka_bcsh2_knihovna_2\\knihovna_bcsh2\\knihovna_bcsh2\\pridatzakaznika.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|solutionrelative:knihovna_bcsh2\\pridatzakaznika.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|c:\\users\\pospi\\source\\repos\\semestralka_bcsh2_knihovna_2\\knihovna_bcsh2\\knihovna_bcsh2\\autori.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|solutionrelative:knihovna_bcsh2\\autori.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\knihovna_bcsh2\\knihy.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|solutionrelative:knihovna_bcsh2\\knihy.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\knihovna_bcsh2\\kniha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|solutionrelative:knihovna_bcsh2\\kniha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|c:\\users\\pospi\\source\\repos\\semestralka_bcsh2_knihovna_2\\knihovna_bcsh2\\knihovna_bcsh2\\pridatknihu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\knihovna_bcsh2\\pridatknihu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|solutionrelative:knihovna_bcsh2\\pridatknihu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
@@ -31,15 +51,11 @@
       "RelativeMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|solutionrelative:knihovna_bcsh2\\pridatknihu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\knihovna_bcsh2\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|solutionrelative:knihovna_bcsh2\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|c:\\users\\pospi\\source\\repos\\semestralka_bcsh2_knihovna_2\\knihovna_bcsh2\\knihovna_bcsh2\\autor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\knihovna_bcsh2\\autor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|solutionrelative:knihovna_bcsh2\\autor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|c:\\users\\pospi\\source\\repos\\semestralka_bcsh2_knihovna_2\\knihovna_bcsh2\\knihovna_bcsh2\\pridatautora.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\knihovna_bcsh2\\pridatautora.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{29F45FE3-D2FD-4EF1-B9BC-2ABFF341A036}|Knihovna_BCSH2\\Knihovna_BCSH2.csproj|solutionrelative:knihovna_bcsh2\\pridatautora.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -59,18 +75,95 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Knihy.xaml",
-              "DocumentMoniker": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\Knihy.xaml",
-              "RelativeDocumentMoniker": "Knihovna_BCSH2\\Knihy.xaml",
-              "ToolTip": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\Knihy.xaml*",
-              "RelativeToolTip": "Knihovna_BCSH2\\Knihy.xaml*",
+              "Title": "Zakaznici.xaml",
+              "DocumentMoniker": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\Zakaznici.xaml",
+              "RelativeDocumentMoniker": "Knihovna_BCSH2\\Zakaznici.xaml",
+              "ToolTip": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\Zakaznici.xaml*",
+              "RelativeToolTip": "Knihovna_BCSH2\\Zakaznici.xaml*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-15T00:04:50.726Z",
+              "WhenOpened": "2024-12-15T21:36:34.296Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Zakaznik.cs",
+              "DocumentMoniker": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\Zakaznik.cs",
+              "RelativeDocumentMoniker": "Knihovna_BCSH2\\Zakaznik.cs",
+              "ToolTip": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\Zakaznik.cs",
+              "RelativeToolTip": "Knihovna_BCSH2\\Zakaznik.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T21:32:03.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DatabaseHelper.cs",
+              "DocumentMoniker": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\DatabaseHelper.cs",
+              "RelativeDocumentMoniker": "Knihovna_BCSH2\\DatabaseHelper.cs",
+              "ToolTip": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\DatabaseHelper.cs",
+              "RelativeToolTip": "Knihovna_BCSH2\\DatabaseHelper.cs",
+              "ViewState": "AQIAAAABAAAAAAAAAAAAABMBAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T14:14:13.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Zakaznici.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\Zakaznici.xaml.cs",
+              "RelativeDocumentMoniker": "Knihovna_BCSH2\\Zakaznici.xaml.cs",
+              "ToolTip": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\Zakaznici.xaml.cs",
+              "RelativeToolTip": "Knihovna_BCSH2\\Zakaznici.xaml.cs",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAiwFsAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T19:49:31.62Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PridatZakaznika.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\PridatZakaznika.xaml.cs",
+              "RelativeDocumentMoniker": "Knihovna_BCSH2\\PridatZakaznika.xaml.cs",
+              "ToolTip": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\PridatZakaznika.xaml.cs",
+              "RelativeToolTip": "Knihovna_BCSH2\\PridatZakaznika.xaml.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAkwBoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T19:50:19.297Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Knihovna_BCSH2\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Knihovna_BCSH2\\MainWindow.xaml.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAmwEAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T22:05:40.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PridatZakaznika.xaml",
+              "DocumentMoniker": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\PridatZakaznika.xaml",
+              "RelativeDocumentMoniker": "Knihovna_BCSH2\\PridatZakaznika.xaml",
+              "ToolTip": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\PridatZakaznika.xaml",
+              "RelativeToolTip": "Knihovna_BCSH2\\PridatZakaznika.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-15T19:50:22.766Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Autori.xaml.cs",
               "DocumentMoniker": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\Autori.xaml.cs",
               "RelativeDocumentMoniker": "Knihovna_BCSH2\\Autori.xaml.cs",
@@ -83,7 +176,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "Knihy.xaml.cs",
               "DocumentMoniker": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\Knihy.xaml.cs",
               "RelativeDocumentMoniker": "Knihovna_BCSH2\\Knihy.xaml.cs",
@@ -91,12 +184,11 @@
               "RelativeToolTip": "Knihovna_BCSH2\\Knihy.xaml.cs",
               "ViewState": "AQIAAD4AAAAAAAAAAAAawFYAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T23:57:10.998Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T23:57:10.998Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "PridatKnihu.xaml",
               "DocumentMoniker": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\PridatKnihu.xaml",
               "RelativeDocumentMoniker": "Knihovna_BCSH2\\PridatKnihu.xaml",
@@ -108,7 +200,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "Kniha.cs",
               "DocumentMoniker": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\Kniha.cs",
               "RelativeDocumentMoniker": "Knihovna_BCSH2\\Kniha.cs",
@@ -116,25 +208,11 @@
               "RelativeToolTip": "Knihovna_BCSH2\\Kniha.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAABYAAABQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T14:03:52.119Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T14:03:52.119Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DatabaseHelper.cs",
-              "DocumentMoniker": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\DatabaseHelper.cs",
-              "RelativeDocumentMoniker": "Knihovna_BCSH2\\DatabaseHelper.cs",
-              "ToolTip": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\DatabaseHelper.cs",
-              "RelativeToolTip": "Knihovna_BCSH2\\DatabaseHelper.cs",
-              "ViewState": "AQIAAGsAAAAAAAAAAAAAAIMAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T14:14:13.516Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "PridatKnihu.xaml.cs",
               "DocumentMoniker": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\PridatKnihu.xaml.cs",
               "RelativeDocumentMoniker": "Knihovna_BCSH2\\PridatKnihu.xaml.cs",
@@ -142,12 +220,11 @@
               "RelativeToolTip": "Knihovna_BCSH2\\PridatKnihu.xaml.cs",
               "ViewState": "AQIAAEsAAAAAAAAAAAAswFoAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T12:49:31.211Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-06T12:49:31.211Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "Autor.cs",
               "DocumentMoniker": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\Autor.cs",
               "RelativeDocumentMoniker": "Knihovna_BCSH2\\Autor.cs",
@@ -155,25 +232,11 @@
               "RelativeToolTip": "Knihovna_BCSH2\\Autor.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T22:43:07.381Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T22:43:07.381Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "Knihovna_BCSH2\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\MainWindow.xaml.cs",
-              "RelativeToolTip": "Knihovna_BCSH2\\MainWindow.xaml.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAAhwCMAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T22:05:40.796Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "PridatAutora.xaml.cs",
               "DocumentMoniker": "C:\\Users\\pospi\\source\\repos\\Semestralka_BCSH2_knihovna_2\\Knihovna_BCSH2\\Knihovna_BCSH2\\PridatAutora.xaml.cs",
               "RelativeDocumentMoniker": "Knihovna_BCSH2\\PridatAutora.xaml.cs",
@@ -181,8 +244,7 @@
               "RelativeToolTip": "Knihovna_BCSH2\\PridatAutora.xaml.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABgAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T22:10:14.496Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T22:10:14.496Z"
             }
           ]
         }

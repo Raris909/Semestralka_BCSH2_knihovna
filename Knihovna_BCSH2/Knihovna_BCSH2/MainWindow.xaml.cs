@@ -54,6 +54,15 @@ namespace Knihovna_BCSH2
                 FOREIGN KEY (AutorId) REFERENCES Autori(Id)
             );
 
+            CREATE TABLE IF NOT EXISTS Zakaznici (
+                Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                Jmeno TEXT NOT NULL,
+                Prijmeni TEXT NOT NULL,
+                Adresa TEXT NOT NULL,
+                Telefon TEXT NOT NULL,
+                Email TEXT NOT NULL
+            );
+
             ";
 
             using (var connection = new SQLiteConnection(connectionString))

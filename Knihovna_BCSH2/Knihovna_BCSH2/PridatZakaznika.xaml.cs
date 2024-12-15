@@ -19,6 +19,12 @@ namespace Knihovna_BCSH2
     /// </summary>
     public partial class PridatZakaznika : Window
     {
+        public string Jmeno { get; private set; }
+        public string Prijmeni { get; private set; }
+        public string Adresa { get; private set; }
+        public string Telefon { get; private set; }
+        public string Email { get; private set; }
+
         public PridatZakaznika()
         {
             InitializeComponent();
@@ -26,6 +32,25 @@ namespace Knihovna_BCSH2
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
         {
+            // Validace vstupů
+            if (string.IsNullOrWhiteSpace(JmenoTextBox.Text) ||
+                string.IsNullOrWhiteSpace(PrijmeniTextBox.Text) ||
+                string.IsNullOrWhiteSpace(AdresaTextBox.Text) ||
+                string.IsNullOrWhiteSpace(TelefonTextBox.Text) ||
+                string.IsNullOrWhiteSpace(EmailTextBox.Text))
+            {
+                MessageBox.Show("Prosím, vyplňte všechna pole.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            // Předání hodnot
+            Jmeno = JmenoTextBox.Text;
+            Prijmeni = PrijmeniTextBox.Text;
+            Adresa = AdresaTextBox.Text;
+            Telefon = TelefonTextBox.Text;
+            Email = EmailTextBox.Text;
+
+            DialogResult = true; // Indikuje, že dialog byl úspěšně dokončen
             Close();
         }
 

@@ -198,5 +198,81 @@ namespace Knihovna_BCSH2
             }
         }
 
+        public List<Zakaznik> GetZakaznici()
+        {
+            using (var connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                var command = new SQLiteCommand("SELECT * FROM Zakaznici", connection);
+
+                var zakaznici = new List<Zakaznik>();
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        zakaznici.Add(new Zakaznik
+                        {
+                            Id = reader.GetInt32(0),
+                            Jmeno = reader.GetString(1),
+                            Prijmeni = reader.GetString(2),
+                            Adresa = reader.GetString(3),
+                            Telefon = reader.GetString(4),
+                            Email = reader.GetString(5)
+                        });
+                    }
+                }
+                return zakaznici;
+            }
+        }
+
+        public void AddZakaznik(Zakaznik zakaznik)
+        {
+            using (var connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                var command = new SQLiteCommand(
+                    "INSERT INTO Zakaznici (Jmeno, Prijmeni, Adresa, Telefon, Email) " +
+                    "VALUES (@Jmeno, @Prijmeni, @Adresa, @Telefon, @Email)", connection);
+
+                command.Parameters.AddWithValue("@Jmeno", zakaznik.Jmeno);
+                command.Parameters.AddWithValue("@Prijmeni", zakaznik.Prijmeni);
+                command.Parameters.AddWithValue("@Adresa", zakaznik.Adresa);
+                command.Parameters.AddWithValue("@Telefon", zakaznik.Telefon);
+                command.Parameters.AddWithValue("@Email", zakaznik.Email);
+
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void UpdateZakaznik(Zakaznik zakaznik)
+        {
+            using (var connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                var command = new SQLiteCommand(
+                    "UPDATE Zakaznici SET Jmeno = @Jmeno, Prijmeni = @Prijmeni, Adresa = @Adresa, " +
+                    "Telefon = @Telefon, Email = @Email WHERE Id = @Id", connection);
+
+                command.Parameters.AddWithValue("@Jmeno", zakaznik.Jmeno);
+                command.Parameters.AddWithValue("@Prijmeni", zakaznik.Prijmeni);
+                command.Parameters.AddWithValue("@Adresa", zakaznik.Adresa);
+                command.Parameters.AddWithValue("@Telefon", zakaznik.Telefon);
+                command.Parameters.AddWithValue("@Email", zakaznik.Email);
+                command.Parameters.AddWithValue("@Id", zakaznik.Id);
+
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void DeleteZakaznik(int id)
+        {
+            using (var connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                var command = new SQLiteCommand("DELETE FROM Zakaznici WHERE Id = @Id", connection);
+                command.Parameters.AddWithValue("@Id", id);
+                command.ExecuteNonQuery();
+            }
+        }
     }
 }
