@@ -14,5 +14,6 @@ namespace Knihovna_BCSH2
         public string Adresa { get; set; }
         public string Telefon { get; set; }
         public string Email { get; set; }
+        public string FullName {  get; set; }
     }
 }

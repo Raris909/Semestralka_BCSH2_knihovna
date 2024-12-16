@@ -19,22 +19,11 @@ namespace Knihovna_BCSH2
     /// </summary>
     public partial class Zapujcky : Window
     {
-        public string DatumZapujcky { get; set; }
-        public string DatumVraceni { get; set; }
-        public string Kniha { get; set; }
-        public string Zakaznik { get; set; }
+        private DatabaseHelper dbHelper = new DatabaseHelper();
         public Zapujcky()
         {
             InitializeComponent();
-        }
-
-        public Zapujcky(string datumZapujcky, string datumVraceni, string kniha, string zakaznik)
-        {
-            InitializeComponent();
-            DatumZapujcky = datumZapujcky;
-            DatumVraceni = datumVraceni;
-            Kniha = kniha;
-            Zakaznik = zakaznik;
+            LoadZapujcky();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -47,15 +36,52 @@ namespace Knihovna_BCSH2
         private void AddLoan_Click(object sender, RoutedEventArgs e)
         {
             var addLoanDialog = new PridatZapujcku();
-            addLoanDialog.ShowDialog();
+            if (addLoanDialog.ShowDialog() == true)
+            {
+                LoadZapujcky(); // Obnovíme seznam zápůjček
+            }
         }
         private void EditLoan_Click(object sender, RoutedEventArgs e)
         {
-
+            if (LoansDataGrid.SelectedItem is Zapujcka selectedLoan)
+            {
+                var editLoanWindow = new PridatZapujcku(selectedLoan); // Okno pro úpravu existující knihy
+                if (editLoanWindow.ShowDialog() == true)
+                {
+                    LoadZapujcky(); // Obnovíme seznam zápůjček
+                    
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vyberte zápůjčku k úpravě.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
+
         private void DeleteLoan_Click(object sender, RoutedEventArgs e)
         {
+            if (LoansDataGrid.SelectedItem is Zapujcka selectedLoan)
+            {
+                if (MessageBox.Show("Opravdu chcete odstranit tuto zápůjčku?", "Potvrzení", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    // Odstraníme zápůjčku z databáze
+                    dbHelper.DeleteZapujcka(selectedLoan);
 
+                    MessageBox.Show("Zápůjčka byla úspěšně odstraněna.", "Úspěch", MessageBoxButton.OK, MessageBoxImage.Information);
+                    LoadZapujcky(); // Obnovíme seznam zápůjček
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vyberte zápůjčku k odstranění.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
+
+        private void LoadZapujcky()
+        {
+            var loans = dbHelper.GetAllZapujcky();
+            LoansDataGrid.ItemsSource = loans; // Načtení zápůjček z databáze
+        }
+
     }
 }

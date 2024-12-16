@@ -63,6 +63,16 @@ namespace Knihovna_BCSH2
                 Email TEXT NOT NULL
             );
 
+            CREATE TABLE IF NOT EXISTS Zapujcky (
+                Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                DatumZapujcky DATE NOT NULL, 
+                DatumVraceni DATE,
+                KnihaId INTEGER NOT NULL,
+                ZakaznikId INTEGER NOT NULL,
+                FOREIGN KEY (KnihaId) REFERENCES Knihy(Id),
+                FOREIGN KEY (ZakaznikId) REFERENCES Zakaznici(Id)
+            );
+
             ";
 
             using (var connection = new SQLiteConnection(connectionString))

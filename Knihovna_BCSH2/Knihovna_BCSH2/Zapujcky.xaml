@@ -10,10 +10,10 @@
         <DataGrid x:Name="LoansDataGrid" AutoGenerateColumns="False" Margin="10,10,10,50"
                   CanUserAddRows="False" IsReadOnly="True" SelectionMode="Single">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Datum zápůjčky" Binding="{Binding datumZapujcky}" Width="*"/>
-                <DataGridTextColumn Header="Datum vrácení" Binding="{Binding datumVraceni}" Width="*"/>
-                <DataGridTextColumn Header="Kniha" Binding="{Binding kniha}" Width="*"/>
-                <DataGridTextColumn Header="Zákazník" Binding="{Binding zakaznik}" Width="*"/>
+                <DataGridTextColumn Header="Datum zápůjčky" Binding="{Binding DatumZapujcky}" Width="*"/>
+                <DataGridTextColumn Header="Datum vrácení" Binding="{Binding DatumVraceni}" Width="*"/>
+                <DataGridTextColumn Header="Kniha" Binding="{Binding KnihaId}" Width="*"/>
+                <DataGridTextColumn Header="Zákazník" Binding="{Binding ZakaznikId}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
 

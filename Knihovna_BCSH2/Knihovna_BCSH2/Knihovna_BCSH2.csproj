@@ -94,6 +94,7 @@
       <DependentUpon>Zakaznici.xaml</DependentUpon>
     </Compile>
     <Compile Include="Zakaznik.cs" />
+    <Compile Include="Zapujcka.cs" />
     <Compile Include="Zapujcky.xaml.cs">
       <DependentUpon>Zapujcky.xaml</DependentUpon>
     </Compile>

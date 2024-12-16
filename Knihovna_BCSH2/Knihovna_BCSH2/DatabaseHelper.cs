@@ -274,5 +274,179 @@ namespace Knihovna_BCSH2
                 command.ExecuteNonQuery();
             }
         }
+
+        public void AddZapujcka(Zapujcka zapujcka)
+        {
+            using (var connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+
+                // Ujistíme se, že název parametrů v dotazu odpovídá parametrům v SQL příkazu
+                var command = new SQLiteCommand(
+                    "INSERT INTO Zapujcky (DatumZapujcky, DatumVraceni, KnihaId, ZakaznikId) VALUES (@DatumZapujcky, @DatumVraceni, @KnihaId, @ZakaznikId)",
+                    connection);
+
+                // Parametry pro datumy
+                command.Parameters.AddWithValue("@DatumZapujcky", zapujcka.DatumZapujcky);
+
+                // Pokud je DatumVraceni null, použijeme DBNull.Value, jinak formátujeme datum
+                if (zapujcka.DatumVraceni == null)
+                {
+                    command.Parameters.AddWithValue("@DatumVraceni", DBNull.Value);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@DatumVraceni", zapujcka.DatumVraceni);
+                }
+
+                // Parametry pro ID knihy a zákazníka
+                command.Parameters.AddWithValue("@KnihaId", zapujcka.KnihaId);
+                command.Parameters.AddWithValue("@ZakaznikId", zapujcka.ZakaznikId);
+
+                // Provádíme příkaz vkládání
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void UpdateZapujcka(Zapujcka zapujcka)
+        {
+            using (var connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                var command = new SQLiteCommand("UPDATE Zapujcky SET DatumZapujcky = @DatumZapujcky, DatumVraceni = @DatumVraceni, KnihaId = @KnihaId, ZakaznikId = @ZakaznikId WHERE Id = @Id", connection);
+                command.Parameters.AddWithValue("@DatumZapujcky", zapujcka.DatumZapujcky);
+                command.Parameters.AddWithValue("@DatumVraceni", zapujcka.DatumVraceni);
+                command.Parameters.AddWithValue("@KnihaId", zapujcka.KnihaId);
+                command.Parameters.AddWithValue("@ZakaznikId", zapujcka.ZakaznikId);
+                command.Parameters.AddWithValue("@Id", zapujcka.Id);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void DeleteZapujcka(Zapujcka zapujcka)
+        {
+            using (var connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                var command = new SQLiteCommand("DELETE FROM Zapujcky WHERE Id = @Id", connection);
+                command.Parameters.AddWithValue("@Id", zapujcka.Id);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public List<Zapujcka> GetAllZapujcky()
+        {
+            var zapujcky = new List<Zapujcka>();
+            using (var connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                using (var command = new SQLiteCommand("SELECT z.Id, z.DatumZapujcky, z.DatumVraceni, k.Id AS KnihaId, k.Nazev AS KnihaNazev, zak.Id AS ZakaznikId, zak.Jmeno AS ZakaznikJmeno " +
+                    "FROM Zapujcky z " +
+                    "JOIN Knihy k ON z.KnihaId = k.Id " +
+                    "JOIN Zakaznici zak ON z.ZakaznikId = zak.Id", connection))
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        zapujcky.Add(new Zapujcka
+                        {
+                            Id = reader.GetInt32(0),
+                            DatumZapujcky = reader.GetDateTime(1),
+                            DatumVraceni = reader.IsDBNull(2) ? (DateTime?)null : reader.GetDateTime(2),
+                            KnihaId = reader.GetInt32(3),
+                            ZakaznikId = reader.GetInt32(5),
+                            Kniha = new Kniha { Id = reader.GetInt32(3), Nazev = reader.GetString(4) },
+                            Zakaznik = new Zakaznik { Id = reader.GetInt32(5), Jmeno = reader.GetString(6) }
+                        });
+                    }
+                }
+            }
+            return zapujcky;
+        }
+
+        public List<string> GetAllBooks()
+        {
+            var books = new List<string>();
+
+            using (var connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                var command = new SQLiteCommand("SELECT Nazev FROM Knihy", connection);
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        books.Add(reader.GetString(0));
+                    }
+                }
+            }
+
+            return books;
+        }
+
+        public List<string> GetAllCustomers()
+        {
+            var customers = new List<string>();
+
+            using (var connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                var command = new SQLiteCommand("SELECT Prijmeni FROM Zakaznici", connection);
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        customers.Add(reader.GetString(0));
+                    }
+                }
+            }
+
+            return customers;
+        }
+
+        public List<Kniha> GetKnihy()
+        {
+            using (var connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                var knihy = new List<Kniha>();
+                using (var command = new SQLiteCommand("SELECT * FROM Knihy", connection))
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        knihy.Add(new Kniha
+                        {
+                            Id = reader.GetInt32(0),
+                            Nazev = reader.GetString(1)
+                        });
+                    }
+                }
+                return knihy;
+            }
+        }
+
+        public List<Zakaznik> GetZakazniciNames()
+        {
+            using (var connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                var zakaznici = new List<Zakaznik>();
+                using (var command = new SQLiteCommand("SELECT * FROM Zakaznici", connection))
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        zakaznici.Add(new Zakaznik
+                        {
+                            Id = reader.GetInt32(0),
+                            Jmeno = reader.GetString(1)
+                        });
+                    }
+                }
+                return zakaznici;
+            }
+        }
+
     }
 }
