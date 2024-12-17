@@ -24,6 +24,11 @@ namespace Knihovna_BCSH2
         private List<Kniha> availableBooks;
         private List<Zakaznik> availableCustomers;
 
+        public int SelectedKnihaId { get; set; }
+        public int SelectedZakaznikId { get; set; }
+        public DateTime DatumZapujcky { get; set; }
+        public DateTime? DatumVraceni { get; set; }
+
         public PridatZapujcku(Zapujcka zapujcka = null)
         {
             InitializeComponent();
@@ -32,16 +37,18 @@ namespace Knihovna_BCSH2
             {
                 availableBooks = dbHelper.GetKnihy();
                 availableCustomers = dbHelper.GetZakaznici();
+
                 foreach (var customer in availableCustomers)
                 {
                     customer.FullName = $"{customer.Jmeno} {customer.Prijmeni}";
                 }
+
                 ZakaznikComboBox.ItemsSource = availableCustomers;
                 KnihaComboBox.ItemsSource = availableBooks;
 
                 if (zapujcka != null)
                 {
-                    currentLoan = zapujcka;
+                    currentLoan = zapujcka; // Nastavení existující zápůjčky
                     DatumZapujckyPicker.SelectedDate = currentLoan.DatumZapujcky;
                     DatumVraceniPicker.SelectedDate = currentLoan.DatumVraceni;
 
@@ -57,51 +64,47 @@ namespace Knihovna_BCSH2
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Chyba při načítání dat: {ex.Message}");
+                MessageBox.Show($"Chyba při načítání dat: {ex.Message}", "Chyba", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
+
         private void OkButton_Click(object sender, RoutedEventArgs e)
         {
-            DateTime datumZapujcky = DatumZapujckyPicker.SelectedDate ?? DateTime.Now;
-            DateTime? datumVraceni = DatumVraceniPicker.SelectedDate;
-
+            // Kontrola povinných polí
             if (DatumZapujckyPicker.SelectedDate == null || KnihaComboBox.SelectedItem == null || ZakaznikComboBox.SelectedItem == null)
             {
                 MessageBox.Show("Vyplňte všechna povinná pole!", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
-            if (KnihaComboBox.SelectedValue == null || ZakaznikComboBox.SelectedValue == null)
-            {
-                MessageBox.Show("Vyberte autora a zákazníka z nabídky.");
-                return;
-            }
-
-            int knihaId = (int)KnihaComboBox.SelectedValue;
-            int zakaznikId = (int)ZakaznikComboBox.SelectedValue;
+            // Výběr hodnot z UI
+            SelectedKnihaId = (int)KnihaComboBox.SelectedValue;
+            SelectedZakaznikId = (int)ZakaznikComboBox.SelectedValue;
+            DatumZapujcky = DatumZapujckyPicker.SelectedDate ?? DateTime.Now;
+            DatumVraceni = DatumVraceniPicker.SelectedDate;
 
             try
             {
                 if (currentLoan == null)
                 {
+                    // Přidání nové zápůjčky
                     var zapujcka = new Zapujcka
                     {
-                        DatumZapujcky = datumZapujcky,
-                        DatumVraceni = datumVraceni,
-                        KnihaId = knihaId,
-                        ZakaznikId = zakaznikId
+                        DatumZapujcky = DatumZapujcky,
+                        DatumVraceni = DatumVraceni,
+                        KnihaId = SelectedKnihaId,
+                        ZakaznikId = SelectedZakaznikId
                     };
 
-                    dbHelper.AddZapujcka(zapujcka);
-                    MessageBox.Show("Zápůjčka byla úspěšně přidána.", "Úspěch", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
-                    currentLoan.DatumZapujcky = datumZapujcky;
-                    currentLoan.DatumVraceni = datumVraceni;
-                    currentLoan.KnihaId = knihaId;
-                    currentLoan.ZakaznikId = zakaznikId;
+                    // Úprava existující zápůjčky
+                    currentLoan.DatumZapujcky = DatumZapujcky;
+                    currentLoan.DatumVraceni = DatumVraceni;
+                    currentLoan.KnihaId = SelectedKnihaId;
+                    currentLoan.ZakaznikId = SelectedZakaznikId;
 
                     dbHelper.UpdateZapujcka(currentLoan);
                     MessageBox.Show("Zápůjčka byla úspěšně upravena.", "Úspěch", MessageBoxButton.OK, MessageBoxImage.Information);

@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Knihovna_BCSH2.PridatZapujcku"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Přidat Zápůjčku" Height="400" Width="300">
+        Title="{Binding Title}" Height="400" Width="300">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -12,18 +12,20 @@
         </Grid.RowDefinitions>
 
         <TextBlock Text="Datum zápůjčky:" Grid.Row="0"/>
-        <DatePicker x:Name="DatumZapujckyPicker" Grid.Row="0" Margin="100,0,0,5"/>
+        <DatePicker x:Name="DatumZapujckyPicker" Grid.Row="0" Margin="100,0,0,5" SelectedDate="{Binding DatumZapujcky}"/>
 
         <TextBlock Text="Datum vrácení:" Grid.Row="1"/>
-        <DatePicker x:Name="DatumVraceniPicker" Grid.Row="1" Margin="100,0,0,5"/>
+        <DatePicker x:Name="DatumVraceniPicker" Grid.Row="1" Margin="100,0,0,5" SelectedDate="{Binding DatumVraceni}"/>
 
         <TextBlock Text="Kniha:" Grid.Row="2"/>
         <ComboBox x:Name="KnihaComboBox" Grid.Row="2" Margin="100,0,0,5"
-                  DisplayMemberPath="Nazev" SelectedValuePath="Id"/>
+                  DisplayMemberPath="Nazev" SelectedValuePath="Id"
+                  SelectedValue="{Binding SelectedKnihaId}" />
 
         <TextBlock Text="Zákazník:" Grid.Row="3"/>
         <ComboBox x:Name="ZakaznikComboBox" Grid.Row="3" Margin="100,0,0,5"
-                  DisplayMemberPath="FullName" SelectedValuePath="Id"/>
+                  DisplayMemberPath="FullName" SelectedValuePath="Id"
+                  SelectedValue="{Binding SelectedZakaznikId}" />
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="4" Margin="0,10,0,0">
             <Button Content="OK" Width="80" Margin="5" Click="OkButton_Click"/>

@@ -105,6 +105,7 @@
     <Compile Include="Model\Kniha.cs" />
     <Compile Include="ViewModel\KnihyViewModel.cs" />
     <Compile Include="ViewModel\ZakazniciViewModel.cs" />
+    <Compile Include="ViewModel\ZapujckyViewModel.cs" />
     <Compile Include="View\PridatAutora.xaml.cs">
       <DependentUpon>PridatAutora.xaml</DependentUpon>
     </Compile>

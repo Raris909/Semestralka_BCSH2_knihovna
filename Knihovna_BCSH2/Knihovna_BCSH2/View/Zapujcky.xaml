@@ -3,12 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Knihovna_BCSH2"
+        xmlns:local="clr-namespace:Knihovna_BCSH2.ViewModel"
         mc:Ignorable="d"
         Title="Zapujcky" Height="450" Width="800">
+    <Window.DataContext>
+        <local:ZapujckyViewModel />
+    </Window.DataContext>
     <Grid>
-        <DataGrid x:Name="LoansDataGrid" AutoGenerateColumns="False" Margin="10,10,10,50"
-                  CanUserAddRows="False" IsReadOnly="True" SelectionMode="Single">
+        <DataGrid Name="LoansDataGrid" AutoGenerateColumns="False" Margin="10,10,10,50"
+                  CanUserAddRows="False" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding Zapujcky}" SelectedItem="{Binding SelectedZapujcka}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Datum zápůjčky" Binding="{Binding DatumZapujcky}" Width="*"/>
                 <DataGridTextColumn Header="Datum vrácení" Binding="{Binding DatumVraceni}" Width="*"/>
@@ -18,10 +21,10 @@
         </DataGrid>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
-            <Button Content="Přidat" Width="80" Margin="5" Click="AddLoan_Click"/>
-            <Button Content="Upravit" Width="80" Margin="5" Click="EditLoan_Click"/>
-            <Button Content="Odstranit" Width="80" Margin="5" Click="DeleteLoan_Click"/>
-            <Button Content="Zpět do hlavního menu" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top" Click="Button_Click"/>
+            <Button Content="Přidat" Width="80" Margin="5" Command="{Binding AddCommand}"/>
+            <Button Content="Upravit" Width="80" Margin="5" Command="{Binding EditCommand}"/>
+            <Button Content="Odstranit" Width="80" Margin="5" Command="{Binding DeleteCommand}"/>
+            <Button Content="Zpět do hlavního menu" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top" Command="{Binding BackToMenuCommand}"/>
         </StackPanel>
     </Grid>
 </Window>
