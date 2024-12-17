@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Knihovna_BCSH2"
         mc:Ignorable="d"
-        Title="PridatKnihu" Height="400" Width="300">
+        Title="{Binding Title}" Height="400" Width="300">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -20,30 +20,30 @@
         </Grid.RowDefinitions>
 
         <TextBlock Text="Název:" Grid.Row="0"/>
-        <TextBox x:Name="NazevTextBox" Grid.Row="0" Margin="100,0,0,5"/>
+        <TextBox x:Name="NazevTextBox" Grid.Row="0" Margin="100,0,0,5" Text="{Binding Nazev}"/>
 
         <TextBlock Text="Autor:" Grid.Row="1"/>
         <ComboBox x:Name="AutorComboBox" Grid.Row="1" Margin="100,0,0,5" 
-          DisplayMemberPath="FullName" SelectedValuePath="Id"/>
+          DisplayMemberPath="FullName" SelectedValuePath="Id" ItemsSource="{Binding AvailableAuthors}" SelectedValue="{Binding SelectedAutorId}"/>
 
         <TextBlock Text="Žánr:" Grid.Row="2"/>
-        <TextBox x:Name="ZanrTextBox" Grid.Row="2" Margin="100,0,0,5"/>
+        <TextBox x:Name="ZanrTextBox" Grid.Row="2" Margin="100,0,0,5" Text="{Binding Zanr}"/>
 
         <TextBlock Text="Vydavatel:" Grid.Row="3"/>
-        <TextBox x:Name="VydavatelTextBox" Grid.Row="3" Margin="100,0,0,5"/>
+        <TextBox x:Name="VydavatelTextBox" Grid.Row="3" Margin="100,0,0,5" Text="{Binding Vydavatel}"/>
 
         <TextBlock Text="Rok vydání:" Grid.Row="4"/>
-        <TextBox x:Name="RokVydaniTextBox" Grid.Row="4" Margin="100,0,0,5"/>
+        <TextBox x:Name="RokVydaniTextBox" Grid.Row="4" Margin="100,0,0,5" Text="{Binding RokVydani}"/>
 
         <TextBlock Text="Počet stran:" Grid.Row="5"/>
-        <TextBox x:Name="PocetStranTextBox" Grid.Row="5" Margin="100,0,0,5"/>
+        <TextBox x:Name="PocetStranTextBox" Grid.Row="5" Margin="100,0,0,5" Text="{Binding PocetStran}"/>
 
         <TextBlock Text="Jazyk:" Grid.Row="6"/>
-        <TextBox x:Name="JazykTextBox" Grid.Row="6" Margin="100,0,0,5"/>
+        <TextBox x:Name="JazykTextBox" Grid.Row="6" Margin="100,0,0,5" Text="{Binding Jazyk}"/>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="8" Margin="0,10,0,0">
-            <Button Content="OK" Width="80" Margin="5" Click="OkButton_Click"/>
-            <Button Content="Zrušit" Width="80" Margin="5" Click="CancelButton_Click"/>
+            <Button Content="OK" Width="80" Margin="5" Command="{Binding OkCommand}"/>
+            <Button Content="Zrušit" Width="80" Margin="5" Command="{Binding CancelCommand}"/>
         </StackPanel>
     </Grid>
 </Window>
