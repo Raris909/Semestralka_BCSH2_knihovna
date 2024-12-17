@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Knihovna_BCSH2.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,58 +20,10 @@ namespace Knihovna_BCSH2
     /// </summary>
     public partial class Autori : Window
     {
-        private DatabaseHelper dbHelper = new DatabaseHelper();
-        private List<Autor> authorsList = new List<Autor>();
         public Autori()
         {
             InitializeComponent();
-            LoadAuthors();
+            DataContext = new AutoriViewModel();
         }
-
-        private void LoadAuthors()
-        {
-            authorsList = dbHelper.GetAllAuthors();
-            AuthorsDataGrid.ItemsSource = authorsList;
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            Close();
-        }
-        private void AddButton_Click(object sender, RoutedEventArgs e)
-        {
-            PridatAutora addAuthorWindow = new PridatAutora();
-            addAuthorWindow.ShowDialog();
-            LoadAuthors();
-        }
-        private void EditButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (AuthorsDataGrid.SelectedItem is Autor selectedAuthor)
-            {
-                PridatAutora editAuthorWindow = new PridatAutora(selectedAuthor);
-                editAuthorWindow.ShowDialog();
-                LoadAuthors();
-            }
-            else
-            {
-                MessageBox.Show("Vyberte autora k úpravě.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
-        }
-        private void DeleteButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (AuthorsDataGrid.SelectedItem is Autor selectedAuthor)
-            {
-                dbHelper.DeleteAuthor(selectedAuthor.Id);
-                MessageBox.Show("Autor byl odstraněn.", "Úspěch", MessageBoxButton.OK, MessageBoxImage.Information);
-                LoadAuthors();
-            }
-            else
-            {
-                MessageBox.Show("Vyberte autora k odstranění.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
-        }
-
     }
 }
