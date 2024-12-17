@@ -104,6 +104,7 @@
     <Compile Include="ViewModel\DatabaseHelper.cs" />
     <Compile Include="Model\Kniha.cs" />
     <Compile Include="ViewModel\KnihyViewModel.cs" />
+    <Compile Include="ViewModel\ZakazniciViewModel.cs" />
     <Compile Include="View\PridatAutora.xaml.cs">
       <DependentUpon>PridatAutora.xaml</DependentUpon>
     </Compile>
