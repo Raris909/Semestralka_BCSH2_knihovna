@@ -48,14 +48,14 @@ namespace Knihovna_BCSH2
 
             if (string.IsNullOrEmpty(jmeno) || string.IsNullOrEmpty(prijmeni) || string.IsNullOrEmpty(datumNarozeniStr) || string.IsNullOrEmpty(zeme))
             {
-                MessageBox.Show("Prosím, vyplňte všechny povinné údaje.");
+                MessageBox.Show("Vyplňte všechny povinné údaje.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
             DateTime datumNarozeni;
             if (!DateTime.TryParse(datumNarozeniStr, out datumNarozeni))
             {
-                MessageBox.Show("Neplatný formát data narození.");
+                MessageBox.Show("Neplatný formát data narození.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
@@ -72,7 +72,7 @@ namespace Knihovna_BCSH2
                     };
 
                     dbHelper.AddAuthor(newAuthor);
-                    MessageBox.Show("Autor byl úspěšně přidán.");
+                    MessageBox.Show("Autor byl úspěšně přidán.", "Úspěch", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
@@ -82,7 +82,7 @@ namespace Knihovna_BCSH2
                     currentAuthor.Zeme = zeme;
 
                     dbHelper.UpdateAuthor(currentAuthor);
-                    MessageBox.Show("Autor byl úspěšně upraven.");
+                    MessageBox.Show("Autor byl úspěšně upraven.", "Úspěch", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
 
                 DialogResult = true;
@@ -90,7 +90,7 @@ namespace Knihovna_BCSH2
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Došlo k chybě při přidávání nebo úpravě autora: {ex.Message}");
+                MessageBox.Show($"Došlo k chybě při přidávání nebo úpravě autora: {ex.Message}", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 

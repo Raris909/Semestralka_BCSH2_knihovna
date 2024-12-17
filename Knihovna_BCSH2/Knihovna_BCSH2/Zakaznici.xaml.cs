@@ -56,7 +56,7 @@ namespace Knihovna_BCSH2
                 var dbHelper = new DatabaseHelper();
                 dbHelper.AddZakaznik(zakaznik);
 
-                MessageBox.Show("Zákazník byl přidán.");
+                MessageBox.Show("Zákazník byl přidán.", "Úspěch", MessageBoxButton.OK, MessageBoxImage.Information);
                 LoadZakaznici();
             }
         }
@@ -90,7 +90,7 @@ namespace Knihovna_BCSH2
             }
             else
             {
-                MessageBox.Show("Prosím, vyberte zákazníka k úpravě.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Vyberte zákazníka k úpravě.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -106,9 +106,13 @@ namespace Knihovna_BCSH2
                     var dbHelper = new DatabaseHelper();
                     dbHelper.DeleteZakaznik(selectedZakaznik.Id);
 
-                    MessageBox.Show("Zákazník byl odstraněn.");
+                    MessageBox.Show("Zákazník byl odstraněn.", "Úspěch", MessageBoxButton.OK, MessageBoxImage.Information);
                     LoadZakaznici();
                 }
+            }
+            else
+            {
+                MessageBox.Show("Vyberte zákazníka k odstranění.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
     }

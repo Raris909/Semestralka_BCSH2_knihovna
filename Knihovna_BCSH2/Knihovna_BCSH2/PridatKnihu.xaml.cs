@@ -71,7 +71,7 @@ namespace Knihovna_BCSH2
 
             if (AutorComboBox.SelectedValue == null)
             {
-                MessageBox.Show("Vyberte autora z nabídky.");
+                MessageBox.Show("Vyberte autora z nabídky.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
@@ -79,7 +79,7 @@ namespace Knihovna_BCSH2
 
             if (!int.TryParse(rokVydaniStr, out int rokVydani) || !int.TryParse(pocetStranStr, out int pocetStran))
             {
-                MessageBox.Show("Rok vydání a počet stran musí být platná čísla.");
+                MessageBox.Show("Rok vydání a počet stran musí být platná čísla.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
@@ -99,7 +99,7 @@ namespace Knihovna_BCSH2
                     };
 
                     dbHelper.AddBook(newBook);
-                    MessageBox.Show("Kniha byla úspěšně přidána.");
+                    MessageBox.Show("Kniha byla úspěšně přidána.", "Úspěch", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
@@ -112,7 +112,7 @@ namespace Knihovna_BCSH2
                     currentBook.AutorId = autorId;
 
                     dbHelper.UpdateBook(currentBook);
-                    MessageBox.Show("Kniha byla úspěšně upravena.");
+                    MessageBox.Show("Kniha byla úspěšně upravena.", "Úspěch", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
 
                 DialogResult = true;

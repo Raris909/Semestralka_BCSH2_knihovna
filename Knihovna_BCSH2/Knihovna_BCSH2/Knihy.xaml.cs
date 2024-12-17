@@ -53,7 +53,7 @@ namespace Knihovna_BCSH2
             }
             else
             {
-                MessageBox.Show("Vyberte knihu, kterou chcete upravit.");
+                MessageBox.Show("Vyberte knihu, kterou chcete upravit.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
         private void DeleteBook_Click(object sender, RoutedEventArgs e)
@@ -65,7 +65,7 @@ namespace Knihovna_BCSH2
                     try
                     {
                         dbHelper.DeleteBook(selectedBook);
-                        MessageBox.Show("Kniha byla úspěšně odstraněna.");
+                        MessageBox.Show("Kniha byla úspěšně odstraněna.", "Úspěch", MessageBoxButton.OK, MessageBoxImage.Information);
                         LoadBooks();
                     }
                     catch (Exception ex)
@@ -76,7 +76,7 @@ namespace Knihovna_BCSH2
             }
             else
             {
-                MessageBox.Show("Vyberte knihu, kterou chcete odstranit.");
+                MessageBox.Show("Vyberte knihu, kterou chcete odstranit.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 

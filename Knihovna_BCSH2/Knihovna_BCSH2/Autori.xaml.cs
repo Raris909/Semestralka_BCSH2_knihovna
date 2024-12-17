@@ -55,7 +55,7 @@ namespace Knihovna_BCSH2
             }
             else
             {
-                MessageBox.Show("Vyberte autora k úpravě.");
+                MessageBox.Show("Vyberte autora k úpravě.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
@@ -63,11 +63,12 @@ namespace Knihovna_BCSH2
             if (AuthorsDataGrid.SelectedItem is Autor selectedAuthor)
             {
                 dbHelper.DeleteAuthor(selectedAuthor.Id);
+                MessageBox.Show("Autor byl odstraněn.", "Úspěch", MessageBoxButton.OK, MessageBoxImage.Information);
                 LoadAuthors();
             }
             else
             {
-                MessageBox.Show("Vyberte autora k odstranění.");
+                MessageBox.Show("Vyberte autora k odstranění.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
