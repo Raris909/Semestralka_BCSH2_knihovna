@@ -70,39 +70,39 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
+    <ApplicationDefinition Include="View\App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Autor.cs" />
-    <Compile Include="DatabaseHelper.cs" />
-    <Compile Include="Kniha.cs" />
-    <Compile Include="PridatAutora.xaml.cs">
+    <Compile Include="Model\Autor.cs" />
+    <Compile Include="ViewModel\DatabaseHelper.cs" />
+    <Compile Include="Model\Kniha.cs" />
+    <Compile Include="View\PridatAutora.xaml.cs">
       <DependentUpon>PridatAutora.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PridatKnihu.xaml.cs">
+    <Compile Include="View\PridatKnihu.xaml.cs">
       <DependentUpon>PridatKnihu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PridatZakaznika.xaml.cs">
+    <Compile Include="View\PridatZakaznika.xaml.cs">
       <DependentUpon>PridatZakaznika.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PridatZapujcku.xaml.cs">
+    <Compile Include="View\PridatZapujcku.xaml.cs">
       <DependentUpon>PridatZapujcku.xaml</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="Zakaznici.xaml.cs">
+    <Compile Include="View\Zakaznici.xaml.cs">
       <DependentUpon>Zakaznici.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Zakaznik.cs" />
-    <Compile Include="Zapujcka.cs" />
-    <Compile Include="Zapujcky.xaml.cs">
+    <Compile Include="Model\Zakaznik.cs" />
+    <Compile Include="Model\Zapujcka.cs" />
+    <Compile Include="View\Zapujcky.xaml.cs">
       <DependentUpon>Zapujcky.xaml</DependentUpon>
     </Compile>
-    <Page Include="Autori.xaml">
+    <Page Include="View\Autori.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Knihy.xaml">
+    <Page Include="View\Knihy.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -110,41 +110,41 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="App.xaml.cs">
+    <Compile Include="View\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Autori.xaml.cs">
+    <Compile Include="View\Autori.xaml.cs">
       <DependentUpon>Autori.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Knihy.xaml.cs">
+    <Compile Include="View\Knihy.xaml.cs">
       <DependentUpon>Knihy.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="PridatAutora.xaml">
+    <Page Include="View\PridatAutora.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PridatKnihu.xaml">
+    <Page Include="View\PridatKnihu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PridatZakaznika.xaml">
+    <Page Include="View\PridatZakaznika.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PridatZapujcku.xaml">
+    <Page Include="View\PridatZapujcku.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Zakaznici.xaml">
+    <Page Include="View\Zakaznici.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Zapujcky.xaml">
+    <Page Include="View\Zapujcky.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -168,7 +168,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="packages.config" />
+    <None Include="View\packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

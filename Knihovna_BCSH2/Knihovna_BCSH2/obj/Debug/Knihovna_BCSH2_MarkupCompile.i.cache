@@ -9,12 +9,12 @@ Knihovna_BCSH2
 none
 false
 DEBUG;TRACE
-C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna_2\Knihovna_BCSH2\Knihovna_BCSH2\App.xaml
-9-388090879
+C:\Users\pospi\source\repos\Semestralka_BCSH2_knihovna_2\Knihovna_BCSH2\Knihovna_BCSH2\View\App.xaml
+9582607681
 
-20-1403856908
+201224457179
 19725042056
-Autori.xaml;Knihy.xaml;MainWindow.xaml;PridatAutora.xaml;PridatKnihu.xaml;PridatZakaznika.xaml;PridatZapujcku.xaml;Zakaznici.xaml;Zapujcky.xaml;
+View\Autori.xaml;View\Knihy.xaml;MainWindow.xaml;View\PridatAutora.xaml;View\PridatKnihu.xaml;View\PridatZakaznika.xaml;View\PridatZapujcku.xaml;View\Zakaznici.xaml;View\Zapujcky.xaml;
 
-True
+False
 
