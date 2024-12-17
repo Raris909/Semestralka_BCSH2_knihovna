@@ -30,32 +30,29 @@ namespace Knihovna_BCSH2
 
             try
             {
-                // Předpokládáme, že GetKnihy a GetZakaznici jsou metody, které vrací seznamy objektů Kniha a Zakaznik
-                availableBooks = dbHelper.GetKnihy(); // Seznam knih
-                availableCustomers = dbHelper.GetZakaznici(); // Seznam zákazníků
+                availableBooks = dbHelper.GetKnihy();
+                availableCustomers = dbHelper.GetZakaznici();
                 foreach (var customer in availableCustomers)
                 {
-                    customer.FullName = $"{customer.Jmeno} {customer.Prijmeni}"; // Vytvoření zobrazeného jména
+                    customer.FullName = $"{customer.Jmeno} {customer.Prijmeni}";
                 }
                 ZakaznikComboBox.ItemsSource = availableCustomers;
                 KnihaComboBox.ItemsSource = availableBooks;
 
                 if (zapujcka != null)
                 {
-                    // Pokud je předána existující kniha, nastavíme hodnoty pro úpravu
                     currentLoan = zapujcka;
                     DatumZapujckyPicker.SelectedDate = currentLoan.DatumZapujcky;
                     DatumVraceniPicker.SelectedDate = currentLoan.DatumVraceni;
 
-                    // Nastavení autora v ComboBox
                     ZakaznikComboBox.SelectedValue = currentLoan.ZakaznikId;
                     KnihaComboBox.SelectedValue = currentLoan.KnihaId;
 
-                    this.Title = "Upravit zápůjčku";
+                    Title = "Upravit zápůjčku";
                 }
                 else
                 {
-                    this.Title = "Přidat zápůjčku";
+                    Title = "Přidat zápůjčku";
                 }
             }
             catch (Exception ex)
@@ -68,7 +65,7 @@ namespace Knihovna_BCSH2
         {
             DateTime datumZapujcky = DatumZapujckyPicker.SelectedDate ?? DateTime.Now;
             DateTime? datumVraceni = DatumVraceniPicker.SelectedDate;
-            // Kontrola, zda jsou všechna povinná pole vyplněna
+
             if (DatumZapujckyPicker.SelectedDate == null || KnihaComboBox.SelectedItem == null || ZakaznikComboBox.SelectedItem == null)
             {
                 MessageBox.Show("Vyplňte všechna povinná pole!", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -90,10 +87,10 @@ namespace Knihovna_BCSH2
                 {
                     var zapujcka = new Zapujcka
                     {
-                        DatumZapujcky = datumZapujcky, // Použití aktuálního data, pokud není vybráno
-                        DatumVraceni = datumVraceni, // Datum vrácení může být null
-                        KnihaId = knihaId, // Použití ID knihy
-                        ZakaznikId = zakaznikId // Použití ID zákazníka
+                        DatumZapujcky = datumZapujcky,
+                        DatumVraceni = datumVraceni,
+                        KnihaId = knihaId,
+                        ZakaznikId = zakaznikId
                     };
 
                     dbHelper.AddZapujcka(zapujcka);
@@ -121,7 +118,7 @@ namespace Knihovna_BCSH2
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            Close(); // Zavření okna bez uložení
+            Close();
         }
     }
 }

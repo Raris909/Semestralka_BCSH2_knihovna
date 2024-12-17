@@ -26,29 +26,26 @@ namespace Knihovna_BCSH2
             InitializeComponent();
             if (author != null)
             {
-                // Pokud je předán existující autor, nastavíme hodnoty pro úpravu
                 currentAuthor = author;
                 JmenoTextBox.Text = currentAuthor.Jmeno;
                 PrijmeniTextBox.Text = currentAuthor.Prijmeni;
                 DatumNarozeniTextBox.Text = currentAuthor.DatumNarozeni.ToString("yyyy-MM-dd");
                 ZemeTextBox.Text = currentAuthor.Zeme;
-                this.Title = "Upravit autora";  // Změníme název okna na "Upravit autora"
+                Title = "Upravit autora";
             }
             else
             {
-                this.Title = "Přidat autora";  // Název okna pro přidání autora
+                Title = "Přidat autora";
             }
         }
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
         {
-            // Získání údajů z textových polí
             string jmeno = JmenoTextBox.Text;
             string prijmeni = PrijmeniTextBox.Text;
             string datumNarozeniStr = DatumNarozeniTextBox.Text;
             string zeme = ZemeTextBox.Text;
 
-            // Kontrola, že všechny povinné údaje byly zadány
             if (string.IsNullOrEmpty(jmeno) || string.IsNullOrEmpty(prijmeni) || string.IsNullOrEmpty(datumNarozeniStr) || string.IsNullOrEmpty(zeme))
             {
                 MessageBox.Show("Prosím, vyplňte všechny povinné údaje.");
@@ -64,9 +61,8 @@ namespace Knihovna_BCSH2
 
             try
             {
-                if (currentAuthor == null) // Přidání nového autora
+                if (currentAuthor == null)
                 {
-                    // Vytvoření nového autora a přidání do databáze
                     var newAuthor = new Autor
                     {
                         Jmeno = jmeno,
@@ -78,9 +74,8 @@ namespace Knihovna_BCSH2
                     dbHelper.AddAuthor(newAuthor);
                     MessageBox.Show("Autor byl úspěšně přidán.");
                 }
-                else // Úprava existujícího autora
+                else
                 {
-                    // Úprava existujícího autora
                     currentAuthor.Jmeno = jmeno;
                     currentAuthor.Prijmeni = prijmeni;
                     currentAuthor.DatumNarozeni = datumNarozeni;
@@ -90,8 +85,8 @@ namespace Knihovna_BCSH2
                     MessageBox.Show("Autor byl úspěšně upraven.");
                 }
 
-                this.DialogResult = true;  // Okno bude zavřeno, protože změny byly úspěšné
-                this.Close();
+                DialogResult = true;
+                Close();
             }
             catch (Exception ex)
             {

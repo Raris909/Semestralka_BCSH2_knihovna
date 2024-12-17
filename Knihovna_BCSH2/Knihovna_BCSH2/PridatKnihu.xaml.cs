@@ -27,19 +27,17 @@ namespace Knihovna_BCSH2
         {
             InitializeComponent();
 
-            // Načtení seznamu autorů z databáze
             try
             {
-                availableAuthors = dbHelper.GetAllAuthors(); // Předpoklad: Metoda vrací seznam autorů
+                availableAuthors = dbHelper.GetAllAuthors();
                 foreach (var author in availableAuthors)
                 {
-                    author.FullName = $"{author.Jmeno} {author.Prijmeni}"; // Vytvoření zobrazeného jména
+                    author.FullName = $"{author.Jmeno} {author.Prijmeni}";
                 }
                 AutorComboBox.ItemsSource = availableAuthors;
 
                 if (book != null)
                 {
-                    // Pokud je předána existující kniha, nastavíme hodnoty pro úpravu
                     currentBook = book;
                     NazevTextBox.Text = currentBook.Nazev;
                     ZanrTextBox.Text = currentBook.Zanr;
@@ -47,15 +45,13 @@ namespace Knihovna_BCSH2
                     RokVydaniTextBox.Text = currentBook.RokVydani.ToString();
                     PocetStranTextBox.Text = currentBook.PocetStran.ToString();
                     JazykTextBox.Text = currentBook.Jazyk;
-
-                    // Nastavení autora v ComboBox
                     AutorComboBox.SelectedValue = currentBook.AutorId;
 
-                    this.Title = "Upravit knihu";
+                    Title = "Upravit knihu";
                 }
                 else
                 {
-                    this.Title = "Přidat knihu";
+                    Title = "Přidat knihu";
                 }
             }
             catch (Exception ex)
@@ -119,8 +115,8 @@ namespace Knihovna_BCSH2
                     MessageBox.Show("Kniha byla úspěšně upravena.");
                 }
 
-                this.DialogResult = true;
-                this.Close();
+                DialogResult = true;
+                Close();
             }
             catch (Exception ex)
             {
@@ -133,6 +129,4 @@ namespace Knihovna_BCSH2
             Close();
         }
     }
-
-
 }

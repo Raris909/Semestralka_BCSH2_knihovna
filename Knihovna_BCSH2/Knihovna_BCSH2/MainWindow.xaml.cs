@@ -32,7 +32,6 @@ namespace Knihovna_BCSH2
         {
             string connectionString = "Data Source=MyDatabase.db;Version=3;";
 
-            // SQL dotaz pro vytvoření tabulky, pokud ještě neexistuje
             string createTableQuery = @"
                 CREATE TABLE IF NOT EXISTS Autori (
                 Id INTEGER PRIMARY KEY AUTOINCREMENT,

@@ -16,10 +16,8 @@ namespace Knihovna_BCSH2
         public int PocetStran { get; set; }     // Počet stran
         public string Jazyk { get; set; }       // Jazyk knihy
 
-        // Klíč cizí tabulky pro autora
         public int AutorId { get; set; }        // ID autora spojeného s knihou
 
-        // Navigační vlastnost (volitelné, užitečné s ORM)
         public Autor Autor { get; set; }        // Detailní informace o autorovi
     }
 

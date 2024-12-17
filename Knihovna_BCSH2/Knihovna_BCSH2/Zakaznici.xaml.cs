@@ -64,7 +64,6 @@ namespace Knihovna_BCSH2
         {
             if (CustomersDataGrid.SelectedItem is Zakaznik selectedZakaznik)
             {
-                // Otevřeme dialogové okno pro úpravu zákazníka
                 var editDialog = new PridatZakaznika
                 {
                     JmenoTextBox = { Text = selectedZakaznik.Jmeno },
@@ -76,19 +75,17 @@ namespace Knihovna_BCSH2
 
                 if (editDialog.ShowDialog() == true)
                 {
-                    // Aktualizujeme data podle vstupů z dialogu
                     selectedZakaznik.Jmeno = editDialog.Jmeno;
                     selectedZakaznik.Prijmeni = editDialog.Prijmeni;
                     selectedZakaznik.Adresa = editDialog.Adresa;
                     selectedZakaznik.Telefon = editDialog.Telefon;
                     selectedZakaznik.Email = editDialog.Email;
 
-                    // Uložíme změny do databáze
                     var dbHelper = new DatabaseHelper();
                     dbHelper.UpdateZakaznik(selectedZakaznik);
 
                     MessageBox.Show("Zákazník byl úspěšně upraven.", "Úspěch", MessageBoxButton.OK, MessageBoxImage.Information);
-                    LoadZakaznici(); // Obnovíme seznam zákazníků
+                    LoadZakaznici();
                 }
             }
             else
@@ -114,6 +111,5 @@ namespace Knihovna_BCSH2
                 }
             }
         }
-
     }
 }

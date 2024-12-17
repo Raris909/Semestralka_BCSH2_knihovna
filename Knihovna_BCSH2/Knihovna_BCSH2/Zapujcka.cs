@@ -8,12 +8,12 @@ namespace Knihovna_BCSH2
 {
     public class Zapujcka
     {
-        public int Id { get; set; } // Jedinečný identifikátor zápůjčky
-        public DateTime DatumZapujcky { get; set; } // Datum zápůjčky
-        public DateTime? DatumVraceni { get; set; } // Datum vrácení
-        public int KnihaId { get; set; } // ID knihy
-        public int ZakaznikId { get; set; } // ID zákazníka
-        public Kniha Kniha { get; set; } // Název knihy
-        public Zakaznik Zakaznik { get; set; } // Jméno zákazníka
+        public int Id { get; set; }
+        public DateTime DatumZapujcky { get; set; }
+        public DateTime? DatumVraceni { get; set; }
+        public int KnihaId { get; set; }
+        public int ZakaznikId { get; set; }
+        public Kniha Kniha { get; set; }
+        public Zakaznik Zakaznik { get; set; }
     }
 }

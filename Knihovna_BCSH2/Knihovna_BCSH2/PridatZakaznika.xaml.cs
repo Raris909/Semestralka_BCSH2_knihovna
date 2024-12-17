@@ -32,7 +32,6 @@ namespace Knihovna_BCSH2
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
         {
-            // Validace vstupů
             if (string.IsNullOrWhiteSpace(JmenoTextBox.Text) ||
                 string.IsNullOrWhiteSpace(PrijmeniTextBox.Text) ||
                 string.IsNullOrWhiteSpace(AdresaTextBox.Text) ||
@@ -43,14 +42,13 @@ namespace Knihovna_BCSH2
                 return;
             }
 
-            // Předání hodnot
             Jmeno = JmenoTextBox.Text;
             Prijmeni = PrijmeniTextBox.Text;
             Adresa = AdresaTextBox.Text;
             Telefon = TelefonTextBox.Text;
             Email = EmailTextBox.Text;
 
-            DialogResult = true; // Indikuje, že dialog byl úspěšně dokončen
+            DialogResult = true;
             Close();
         }
 

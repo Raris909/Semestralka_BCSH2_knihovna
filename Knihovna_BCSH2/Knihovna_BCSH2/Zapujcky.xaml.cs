@@ -38,18 +38,17 @@ namespace Knihovna_BCSH2
             var addLoanDialog = new PridatZapujcku();
             if (addLoanDialog.ShowDialog() == true)
             {
-                LoadZapujcky(); // Obnovíme seznam zápůjček
+                LoadZapujcky();
             }
         }
         private void EditLoan_Click(object sender, RoutedEventArgs e)
         {
             if (LoansDataGrid.SelectedItem is Zapujcka selectedLoan)
             {
-                var editLoanWindow = new PridatZapujcku(selectedLoan); // Okno pro úpravu existující knihy
+                var editLoanWindow = new PridatZapujcku(selectedLoan);
                 if (editLoanWindow.ShowDialog() == true)
                 {
-                    LoadZapujcky(); // Obnovíme seznam zápůjček
-                    
+                    LoadZapujcky();
                 }
             }
             else
@@ -64,11 +63,9 @@ namespace Knihovna_BCSH2
             {
                 if (MessageBox.Show("Opravdu chcete odstranit tuto zápůjčku?", "Potvrzení", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
-                    // Odstraníme zápůjčku z databáze
                     dbHelper.DeleteZapujcka(selectedLoan);
-
                     MessageBox.Show("Zápůjčka byla úspěšně odstraněna.", "Úspěch", MessageBoxButton.OK, MessageBoxImage.Information);
-                    LoadZapujcky(); // Obnovíme seznam zápůjček
+                    LoadZapujcky();
                 }
             }
             else
@@ -80,8 +77,7 @@ namespace Knihovna_BCSH2
         private void LoadZapujcky()
         {
             var loans = dbHelper.GetAllZapujcky();
-            LoansDataGrid.ItemsSource = loans; // Načtení zápůjček z databáze
+            LoansDataGrid.ItemsSource = loans;
         }
-
     }
 }

@@ -8,10 +8,6 @@ namespace Knihovna_BCSH2
 {
     public class Program
     {
-        //public static void Main(string[] args)
-        //{
-        //    MainWindow mainWindow = new MainWindow();
-        //    mainWindow.Show();
-        //}
+
     }
 }

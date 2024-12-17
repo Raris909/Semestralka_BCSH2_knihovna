@@ -35,20 +35,20 @@ namespace Knihovna_BCSH2
 
         private void AddBook_Click(object sender, RoutedEventArgs e)
         {
-            var addBookWindow = new PridatKnihu(); // Okno pro přidání nové knihy
+            var addBookWindow = new PridatKnihu();
             if (addBookWindow.ShowDialog() == true)
             {
-                LoadBooks(); // Obnovení seznamu knih po přidání
+                LoadBooks();
             }
         }
         private void EditBook_Click(object sender, RoutedEventArgs e)
         {
             if (BooksDataGrid.SelectedItem is Kniha selectedBook)
             {
-                var editBookWindow = new PridatKnihu(selectedBook); // Okno pro úpravu existující knihy
+                var editBookWindow = new PridatKnihu(selectedBook);
                 if (editBookWindow.ShowDialog() == true)
                 {
-                    LoadBooks(); // Obnovení seznamu knih po úpravě
+                    LoadBooks();
                 }
             }
             else
@@ -66,7 +66,7 @@ namespace Knihovna_BCSH2
                     {
                         dbHelper.DeleteBook(selectedBook);
                         MessageBox.Show("Kniha byla úspěšně odstraněna.");
-                        LoadBooks(); // Obnovení seznamu knih po odstranění
+                        LoadBooks();
                     }
                     catch (Exception ex)
                     {
@@ -84,7 +84,7 @@ namespace Knihovna_BCSH2
         {
             try
             {
-                var books = dbHelper.GetBooks(); // Získání seznamu knih z databáze
+                var books = dbHelper.GetBooks();
                 BooksDataGrid.ItemsSource = books;
             }
             catch (Exception ex)

@@ -42,11 +42,7 @@ namespace Knihovna_BCSH2
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             PridatAutora addAuthorWindow = new PridatAutora();
-            
-            // Po zavření okna pro přidání autora (OK nebo Cancel) obnovíme seznam autorů
             addAuthorWindow.ShowDialog();
-
-            // Po přidání nového autora aktualizujeme seznam
             LoadAuthors();
         }
         private void EditButton_Click(object sender, RoutedEventArgs e)
@@ -54,8 +50,8 @@ namespace Knihovna_BCSH2
             if (AuthorsDataGrid.SelectedItem is Autor selectedAuthor)
             {
                 PridatAutora editAuthorWindow = new PridatAutora(selectedAuthor);
-                editAuthorWindow.ShowDialog(); // Zobrazí okno pro úpravu
-                LoadAuthors(); // Obnoví seznam autorů
+                editAuthorWindow.ShowDialog();
+                LoadAuthors();
             }
             else
             {
@@ -67,7 +63,7 @@ namespace Knihovna_BCSH2
             if (AuthorsDataGrid.SelectedItem is Autor selectedAuthor)
             {
                 dbHelper.DeleteAuthor(selectedAuthor.Id);
-                LoadAuthors(); // Obnoví DataGrid
+                LoadAuthors();
             }
             else
             {
