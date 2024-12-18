@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Knihovna_BCSH2.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,42 +20,12 @@ namespace Knihovna_BCSH2
     /// </summary>
     public partial class PridatZakaznika : Window
     {
-        public string Jmeno { get; private set; }
-        public string Prijmeni { get; private set; }
-        public string Adresa { get; private set; }
-        public string Telefon { get; private set; }
-        public string Email { get; private set; }
-
-        public PridatZakaznika()
+        public PridatZakaznika(Zakaznik zakaznik = null)
         {
             InitializeComponent();
-        }
 
-        private void OkButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(JmenoTextBox.Text) ||
-                string.IsNullOrWhiteSpace(PrijmeniTextBox.Text) ||
-                string.IsNullOrWhiteSpace(AdresaTextBox.Text) ||
-                string.IsNullOrWhiteSpace(TelefonTextBox.Text) ||
-                string.IsNullOrWhiteSpace(EmailTextBox.Text))
-            {
-                MessageBox.Show("Prosím, vyplňte všechna pole.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
-            Jmeno = JmenoTextBox.Text;
-            Prijmeni = PrijmeniTextBox.Text;
-            Adresa = AdresaTextBox.Text;
-            Telefon = TelefonTextBox.Text;
-            Email = EmailTextBox.Text;
-
-            DialogResult = true;
-            Close();
-        }
-
-        private void CancelButton_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
+            // Pokud není DataContext nastaven v XAML, můžete ho nastavit zde.
+            DataContext = new PridatZakaznikaViewModel(zakaznik);
         }
     }
 }

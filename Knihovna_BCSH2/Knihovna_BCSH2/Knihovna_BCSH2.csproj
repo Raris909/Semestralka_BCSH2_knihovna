@@ -106,6 +106,8 @@
     <Compile Include="ViewModel\KnihyViewModel.cs" />
     <Compile Include="ViewModel\PridatAutoraViewModel.cs" />
     <Compile Include="ViewModel\PridatKnihuViewModel.cs" />
+    <Compile Include="ViewModel\PridatZakaznikaViewModel.cs" />
+    <Compile Include="ViewModel\PridatZapujckuViewModel.cs" />
     <Compile Include="ViewModel\ZakazniciViewModel.cs" />
     <Compile Include="ViewModel\ZapujckyViewModel.cs" />
     <Compile Include="View\PridatAutora.xaml.cs">

@@ -55,10 +55,8 @@ namespace Knihovna_BCSH2.ViewModel
         private void AddBook()
         {
             var addWindow = new PridatKnihu();
-            if (addWindow.ShowDialog() == true)
-            {
-                LoadBooks();
-            }
+            addWindow.ShowDialog();
+            LoadBooks();
         }
 
         private void EditBook()
@@ -66,10 +64,8 @@ namespace Knihovna_BCSH2.ViewModel
             if (SelectedBook != null)
             {
                 var editWindow = new PridatKnihu(SelectedBook);
-                if (editWindow.ShowDialog() == true)
-                {
-                    LoadBooks();
-                }
+                editWindow.ShowDialog();
+                LoadBooks();
             }
         }
 

@@ -58,48 +58,17 @@ namespace Knihovna_BCSH2.ViewModel
         private void AddZakaznik()
         {
             var addDialog = new PridatZakaznika();
-            if (addDialog.ShowDialog() == true)
-            {
-                var zakaznik = new Zakaznik
-                {
-                    Jmeno = addDialog.JmenoTextBox.Text,
-                    Prijmeni = addDialog.PrijmeniTextBox.Text,
-                    Adresa = addDialog.AdresaTextBox.Text,
-                    Telefon = addDialog.TelefonTextBox.Text,
-                    Email = addDialog.EmailTextBox.Text
-                };
-
-                dbHelper.AddZakaznik(zakaznik);
-                MessageBox.Show("Zákazník byl přidán.", "Úspěch", MessageBoxButton.OK, MessageBoxImage.Information);
-                LoadZakaznici(); // Obnovení seznamu zákazníků
-            }
+            addDialog.ShowDialog();
+            LoadZakaznici();
         }
 
         private void EditZakaznik()
         {
             if (SelectedZakaznik != null)
             {
-                var editDialog = new PridatZakaznika
-                {
-                    JmenoTextBox = { Text = SelectedZakaznik.Jmeno },
-                    PrijmeniTextBox = { Text = SelectedZakaznik.Prijmeni },
-                    AdresaTextBox = { Text = SelectedZakaznik.Adresa },
-                    TelefonTextBox = { Text = SelectedZakaznik.Telefon },
-                    EmailTextBox = { Text = SelectedZakaznik.Email }
-                };
-
-                if (editDialog.ShowDialog() == true)
-                {
-                    SelectedZakaznik.Jmeno = editDialog.JmenoTextBox.Text;
-                    SelectedZakaznik.Prijmeni = editDialog.PrijmeniTextBox.Text;
-                    SelectedZakaznik.Adresa = editDialog.AdresaTextBox.Text;
-                    SelectedZakaznik.Telefon = editDialog.TelefonTextBox.Text;
-                    SelectedZakaznik.Email = editDialog.EmailTextBox.Text;
-
-                    dbHelper.UpdateZakaznik(SelectedZakaznik);
-                    MessageBox.Show("Zákazník byl úspěšně upraven.", "Úspěch", MessageBoxButton.OK, MessageBoxImage.Information);
-                    LoadZakaznici(); // Obnovení seznamu
-                }
+                var editDialog = new PridatZakaznika(SelectedZakaznik);
+                editDialog.ShowDialog();
+                LoadZakaznici();
             }
         }
 
