@@ -20,16 +20,16 @@
         <TextBlock Text="Kniha:" Grid.Row="2"/>
         <ComboBox x:Name="KnihaComboBox" Grid.Row="2" Margin="100,0,0,5"
                   DisplayMemberPath="Nazev" SelectedValuePath="Id"
-                  SelectedValue="{Binding SelectedKnihaId}" />
+                  SelectedValue="{Binding SelectedKnihaId}" ItemsSource="{Binding AvailableBooks}" />
 
         <TextBlock Text="Zákazník:" Grid.Row="3"/>
         <ComboBox x:Name="ZakaznikComboBox" Grid.Row="3" Margin="100,0,0,5"
                   DisplayMemberPath="FullName" SelectedValuePath="Id"
-                  SelectedValue="{Binding SelectedZakaznikId}" />
+                  SelectedValue="{Binding SelectedZakaznikId}" ItemsSource="{Binding AvailableCustomers}" />
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="4" Margin="0,10,0,0">
-            <Button Content="OK" Width="80" Margin="5" Click="OkButton_Click"/>
-            <Button Content="Zrušit" Width="80" Margin="5" Click="CancelButton_Click"/>
+            <Button Content="OK" Width="80" Margin="5" Command="{Binding OkCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+            <Button Content="Zrušit" Width="80" Margin="5" Command="{Binding CancelCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
         </StackPanel>
     </Grid>
 </Window>

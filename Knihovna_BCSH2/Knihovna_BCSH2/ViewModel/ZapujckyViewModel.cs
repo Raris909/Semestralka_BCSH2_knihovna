@@ -62,20 +62,8 @@ namespace Knihovna_BCSH2.ViewModel
         private void AddZapujcka()
         {
             var addLoanDialog = new PridatZapujcku();
-            if (addLoanDialog.ShowDialog() == true)
-            {
-                var zapujcka = new Zapujcka
-                {
-                    KnihaId = addLoanDialog.SelectedKnihaId,
-                    ZakaznikId = addLoanDialog.SelectedZakaznikId,
-                    DatumZapujcky = addLoanDialog.DatumZapujcky,
-                    DatumVraceni = addLoanDialog.DatumVraceni
-                };
-
-                dbHelper.AddZapujcka(zapujcka);
-                MessageBox.Show("Zápůjčka byla přidána.", "Úspěch", MessageBoxButton.OK, MessageBoxImage.Information);
-                LoadZapujcky(); // Obnovení seznamu
-            }
+            addLoanDialog.ShowDialog();
+            LoadZapujcky();
         }
 
         // Úprava zápůjčky
@@ -83,17 +71,9 @@ namespace Knihovna_BCSH2.ViewModel
         {
             if (SelectedZapujcka != null)
             {
-                // Předání vybrané zápůjčky dialogu
                 var editDialog = new PridatZapujcku(SelectedZapujcka);
-
-                if (editDialog.ShowDialog() == true)
-                {
-                    LoadZapujcky(); // Obnovíme seznam zápůjček
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vyberte zápůjčku k úpravě.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Warning);
+                editDialog.ShowDialog();
+                LoadZapujcky();
             }
         }
 
