@@ -380,5 +380,52 @@ namespace Knihovna_BCSH2
                 return knihy;
             }
         }
+
+        public List<Zapujcka> GetActiveZapujckyForZakaznik(int zakaznikId)
+        {
+            var zapujcky = new List<Zapujcka>();
+
+            // SQLite připojení
+            using (var connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+
+                // SQL dotaz pro získání nevrácených zápůjček
+                string query = @"
+            SELECT Id, DatumZapujcky, DatumVraceni, KnihaId, ZakaznikId
+            FROM Zapujcky
+            WHERE ZakaznikId = @ZakaznikId AND DatumVraceni IS NULL";
+
+                using (var command = new SQLiteCommand(query, connection))
+                {
+                    // Parametr SQL dotazu
+                    command.Parameters.AddWithValue("@ZakaznikId", zakaznikId);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            // Naplnění objektu Zapujcka
+                            var zapujcka = new Zapujcka
+                            {
+                                Id = reader.GetInt32(reader.GetOrdinal("Id")),
+                                DatumZapujcky = reader.GetDateTime(reader.GetOrdinal("DatumZapujcky")),
+                                DatumVraceni = reader.IsDBNull(reader.GetOrdinal("DatumVraceni"))
+                                               ? (DateTime?)null
+                                               : reader.GetDateTime(reader.GetOrdinal("DatumVraceni")),
+                                KnihaId = reader.GetInt32(reader.GetOrdinal("KnihaId")),
+                                ZakaznikId = reader.GetInt32(reader.GetOrdinal("ZakaznikId"))
+                            };
+
+                            zapujcky.Add(zapujcka);
+                        }
+                    }
+                }
+            }
+
+            return zapujcky;
+        }
+
+
     }
 }

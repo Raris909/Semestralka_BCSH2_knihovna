@@ -81,9 +81,18 @@ namespace Knihovna_BCSH2.ViewModel
 
                 if (result == MessageBoxResult.Yes)
                 {
-                    dbHelper.DeleteZakaznik(SelectedZakaznik.Id);
-                    MessageBox.Show("Zákazník byl odstraněn.", "Úspěch", MessageBoxButton.OK, MessageBoxImage.Information);
-                    LoadZakaznici(); // Obnovení seznamu
+                    var activeLoans = dbHelper.GetActiveZapujckyForZakaznik(SelectedZakaznik.Id);
+                    if (activeLoans.Any())
+                    {
+                        MessageBox.Show("Nelze odstranit zákazníka, který má nevrácené zápůjčky.", "Chyba", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
+                    else
+                    {
+                        dbHelper.DeleteZakaznik(SelectedZakaznik.Id);
+                        MessageBox.Show("Zákazník byl odstraněn.", "Úspěch", MessageBoxButton.OK, MessageBoxImage.Information);
+                        LoadZakaznici(); // Obnovení seznamu
+                    }
                 }
             }
         }
