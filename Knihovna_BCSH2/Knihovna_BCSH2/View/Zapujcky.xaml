@@ -13,8 +13,8 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Datum zápůjčky" Binding="{Binding DatumZapujcky}" Width="*"/>
                 <DataGridTextColumn Header="Datum vrácení" Binding="{Binding DatumVraceni}" Width="*"/>
-                <DataGridTextColumn Header="Kniha" Binding="{Binding KnihaId}" Width="*"/>
-                <DataGridTextColumn Header="Zákazník" Binding="{Binding ZakaznikId}" Width="*"/>
+                <DataGridTextColumn Header="Kniha" Binding="{Binding KnihaNazev}" Width="*"/>
+                <DataGridTextColumn Header="Zákazník" Binding="{Binding FullName}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
 

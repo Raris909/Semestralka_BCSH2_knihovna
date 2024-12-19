@@ -335,7 +335,9 @@ namespace Knihovna_BCSH2
             using (var connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
-                using (var command = new SQLiteCommand("SELECT z.Id, z.DatumZapujcky, z.DatumVraceni, k.Id AS KnihaId, k.Nazev AS KnihaNazev, zak.Id AS ZakaznikId, zak.Jmeno AS ZakaznikJmeno " +
+                using (var command = new SQLiteCommand(
+                    "SELECT z.Id, z.DatumZapujcky, z.DatumVraceni, k.Id AS KnihaId, k.Nazev AS KnihaNazev, " +
+                    "zak.Id AS ZakaznikId, zak.Jmeno || ' ' || zak.Prijmeni AS ZakaznikFullName " +
                     "FROM Zapujcky z " +
                     "JOIN Knihy k ON z.KnihaId = k.Id " +
                     "JOIN Zakaznici zak ON z.ZakaznikId = zak.Id", connection))
@@ -345,19 +347,28 @@ namespace Knihovna_BCSH2
                     {
                         zapujcky.Add(new Zapujcka
                         {
-                            Id = reader.GetInt32(0),
-                            DatumZapujcky = reader.GetDateTime(1),
-                            DatumVraceni = reader.IsDBNull(2) ? (DateTime?)null : reader.GetDateTime(2),
-                            KnihaId = reader.GetInt32(3),
-                            ZakaznikId = reader.GetInt32(5),
-                            Kniha = new Kniha { Id = reader.GetInt32(3), Nazev = reader.GetString(4) },
-                            Zakaznik = new Zakaznik { Id = reader.GetInt32(5), Jmeno = reader.GetString(6) }
+                            Id = reader.GetInt32(0), // z.Id
+                            DatumZapujcky = reader.GetDateTime(1), // z.DatumZapujcky
+                            DatumVraceni = reader.IsDBNull(2) ? (DateTime?)null : reader.GetDateTime(2), // z.DatumVraceni
+                            Kniha = new Kniha
+                            {
+                                Id = reader.GetInt32(3), // k.Id (KnihaId)
+                                Nazev = reader.GetString(4) // k.Nazev (KnihaNazev)
+                            },
+                            Zakaznik = new Zakaznik
+                            {
+                                Id = reader.GetInt32(5), // zak.Id (ZakaznikId)
+                                FullName = reader.GetString(6) // zak.Jmeno || ' ' || zak.Prijmeni (ZakaznikFullName)
+                            },
+                            KnihaNazev = reader.GetString(4), // Alternativně: k.Nazev
+                            FullName = reader.GetString(6) // Alternativně: zak.Jmeno || ' ' || zak.Prijmeni
                         });
                     }
                 }
             }
             return zapujcky;
         }
+
 
         public List<Kniha> GetKnihy()
         {

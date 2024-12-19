@@ -13,6 +13,8 @@ namespace Knihovna_BCSH2
         public DateTime? DatumVraceni { get; set; }
         public int KnihaId { get; set; }
         public int ZakaznikId { get; set; }
+        public string KnihaNazev {  get; set; }
+        public string FullName { get; set; }
         public Kniha Kniha { get; set; }
         public Zakaznik Zakaznik { get; set; }
     }
